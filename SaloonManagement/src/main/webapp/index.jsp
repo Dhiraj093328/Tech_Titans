@@ -44,9 +44,9 @@
           <p class="location"> Pimpri, Pune</p>
           <p class="rating">***** <span class="text-dark">4.8</span></p>
           <p class="card-text">Premium beauty & hair services by certified professionals.</p>
-          <form action="BookAppointmentServlet" method="post">
+          <form action="bookAppointment.jsp" method="post">
             <input type="hidden" name="salon" value="Lakme Salon Pimpri">
-            <button type="submit" class="btn btn-book text-white w-100">Book Appointment</button>
+            <button type="submit" class="btn btn-book text-white w-100 ">Book Appointment</button>
           </form>
         </div>
       </div>
@@ -61,7 +61,7 @@
           <p class="location">Chinchwad, Pune</p>
           <p class="rating">**** <span class="text-dark">4.5</span></p>
           <p class="card-text">Trendy haircuts & grooming with modern techniques.</p>
-          <form action="BookAppointmentServlet" method="post">
+          <form action="bookAppointment.jsp" method="post">
             <input type="hidden" name="salon" value="Jawed Habib Chinchwad">
             <button type="submit" class="btn btn-book text-white w-100">Book Appointment</button>
             </form>
@@ -79,7 +79,7 @@
           <p class="location"> Akurdi, Pune</p>
           <p class="rating">***** <span class="text-dark">4.6</span></p>
           <p class="card-text">Affordable beauty & wellness services for everyone.</p>
-          <form action="BookAppointmentServlet" method="post">
+          <form action="bookAppointment.jsp" method="post">
             <input type="hidden" name="salon" value="Naturals Salon Akurdi">
             <button type="submit" class="btn btn-book text-white w-100">Book Appointment</button>
           </form>
@@ -96,7 +96,7 @@
           <p class="location">📍 Morewadi, Pimpri-Chinchwade</p>
           <p class="rating">***** <span class="text-dark">4.9</span></p>
           <p class="card-text">Affordable beauty & wellness services for everyone.</p>
-          <form action="BookAppointmentServlet" method="post">
+          <form action="bookAppointment.jsp" method="post">
             <input type="hidden" name="salon" value="Naturals Salon Akurdi">
             <button type="submit" class="btn btn-book text-white w-100">Book Appointment</button>
           </form>
@@ -113,7 +113,7 @@
           <p class="location">Pimpri, Pune</p>
           <p class="rating">***** <span class="text-dark">4.9</span></p>
           <p class="card-text">Affordable beauty & wellness services for everyone.</p>
-          <form action="BookAppointmentServlet" method="post">
+          <form action="bookAppointment.jsp" method="post">
             <input type="hidden" name="salon" value="Naturals Salon Akurdi">
             <button type="submit" class="btn btn-book text-white w-100">Book Appointment</button>
           </form>
@@ -130,7 +130,7 @@
           <p class="location">Pimpri Colony, Pune</p>
           <p class="rating">***** <span class="text-dark">4.9</span></p>
           <p class="card-text">Affordable beauty & wellness services for everyone.</p>
-          <form action="BookAppointmentServlet" method="post">
+          <form action="bookAppointment.jsp" method="post">
             <input type="hidden" name="salon" value="Naturals Salon Akurdi">
             <button type="submit" class="btn btn-book text-white w-100">Book Appointment</button>
           </form>
