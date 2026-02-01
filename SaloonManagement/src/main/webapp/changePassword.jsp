@@ -98,7 +98,7 @@ function validatePassword() {
         <input type="password" id="newPassword" name="newPassword" required>
 
         <label>Confirm New Password</label>
-        <input type="password" id="confirmPassword" required>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
 
         <div class="actions">
             <button type="submit">Update Password</button>
@@ -109,6 +109,14 @@ function validatePassword() {
 
 </div>
 
+<%
+    String error = (String) request.getAttribute("errorMessage");
+    if (error != null) {
+%>
+    <p style="color:red; text-align:center;"><%= error %></p>
+<%
+    }
+%>
 
 <jsp:include page="footer.jsp" />
 

@@ -12,18 +12,18 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/ProfileServlet")
-public class ProfileServlet extends HttpServlet 
-{
+@WebServlet("/EditProfileServlet")
+public class EditProfileServlet extends HttpServlet {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-    {
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
+        // Get existing session (do NOT create new)
         HttpSession session = request.getSession(false);
 
-        // Session validation
-        if (session == null || session.getAttribute("userId") == null) 
-        {
+        // Login check
+        if (session == null || session.getAttribute("userId") == null) {
             response.sendRedirect("login.jsp");
             return;
         }
@@ -31,35 +31,37 @@ public class ProfileServlet extends HttpServlet
         int userId = (int) session.getAttribute("userId");
 
         try (Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement("SELECT name, email, phone, address FROM users WHERE user_id=?")) 
-        {
+             PreparedStatement ps = con.prepareStatement(
+                     "SELECT name, email, phone, address FROM users WHERE user_id=?")) {
 
             ps.setInt(1, userId);
             ResultSet rs = ps.executeQuery();
 
-            if (rs.next()) 
-            {
+            if (rs.next()) {
                 User user = new User();
                 user.setName(rs.getString("name"));
                 user.setEmail(rs.getString("email"));
                 user.setPhone(rs.getString("phone"));
                 user.setAddress(rs.getString("address"));
 
+                // Send user object to JSP
                 request.setAttribute("user", user);
-                request.getRequestDispatcher("profile.jsp").forward(request, response);
-            } 
-            else 
-            {
-                request.setAttribute("errorMessage", "Profile not found");
-                request.getRequestDispatcher("error.jsp").forward(request, response);
+
+                // Forward to edit profile page
+                request.getRequestDispatcher("editProfile.jsp")
+                       .forward(request, response);
+
+            } else {
+                request.setAttribute("errorMessage", "User not found");
+                request.getRequestDispatcher("error.jsp")
+                       .forward(request, response);
             }
 
-        } 
-        catch (Exception e) 
-        {
-            System.out.println(e);
+        } catch (Exception e) {
+            e.printStackTrace();
             request.setAttribute("errorMessage", "Unable to load profile");
-            request.getRequestDispatcher("error.jsp").forward(request, response);
+            request.getRequestDispatcher("error.jsp")
+                   .forward(request, response);
         }
     }
 }

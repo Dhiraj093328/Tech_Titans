@@ -1,112 +1,100 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
 <%@ page import="test.User" %>
-
 <%
     User user = (User) request.getAttribute("user");
-
-    if (user == null) {
 %>
-        <h2 style="color:red; text-align:center; margin-top:50px;">
-            ❌ Profile data not available <br>
-            Please access this page via ProfileServlet
-        </h2>
-<%
-        return;
-    }
-%>
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>My Profile</title>
-
-<link rel="stylesheet" href="profile.css">
-<link rel="stylesheet" href="common.css">
-
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: url("../images/salon-bg.jpg") no-repeat center;
-    background-size: cover;
-}
-
-.profile-box {
-    width: 400px;
-    margin: 80px auto;
-    background: rgba(255,255,255,0.9);
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.profile-box h2 {
-    text-align: center;
-}
-
-.row {
-    margin: 10px 0;
-}
-
-.row label {
-    font-weight: bold;
-}
-
-.actions {
-    text-align: center;
-    margin-top: 15px;
-}
-
-.actions a {
-    text-decoration: none;
-    background: #c2185b;
-    color: white;
-    padding: 8px 14px;
-    margin: 5px;
-    border-radius: 5px;
-}
-</style>
-</head>
-
-<body>
 
 <jsp:include page="header.jsp" />
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<div class="profile-box">
+<link rel="stylesheet" href="profile.css">
+<a href = "changePassword.jsp"></a>
+
+<style>
+.profile-container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.profile-container h2 {
+    margin-bottom: 20px;
+    color: #6a1b9a;
+}
+
+.profile-row {
+    margin: 10px 0;
+    font-size: 17px;
+}
+
+.profile-row span {
+    font-weight: bold;
+    width: 120px;
+    display: inline-block;
+}
+
+.profile-actions {
+    margin-top: 25px;
+}
+
+.profile-actions a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 18px;
+    background: linear-gradient(135deg,#8e24aa,#c2185b);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+}
+</style>
+
+<div class="profile-container">
 
     <h2>My Profile</h2>
 
-    <div class="row">
-        <label>Name :</label>
-        <%= user.getName() %>
+    <div class="profile-row">
+        <span>Name:</span> <%= user.getName() %>
     </div>
 
-    <div class="row">
-        <label>Email :</label>
-        <%= user.getEmail() %>
+    <div class="profile-row">
+        <span>Email:</span> <%= user.getEmail() %>
     </div>
 
-    <div class="row">
-        <label>Phone :</label>
-        <%= user.getPhone() %>
+    <div class="profile-row">
+        <span>Phone:</span> <%= user.getPhone() %>
     </div>
 
-    <div class="row">
-        <label>Address :</label>
-        <%= user.getAddress() %>
+    <div class="profile-row">
+        <span>Address:</span> <%= user.getAddress() %>
     </div>
 
-    <div class="actions">
-        <a href="editProfile.jsp">Edit Profile</a>
-        <a href="changePassword.jsp">Change Password</a>
+    <div class="profile-actions">
+        <a href="EditProfileServlet">Edit Profile</a>
+        <a href="ChangePasswordServlet">Change Password</a>
         <a href="AppointmentHistoryServlet">Appointments</a>
     </div>
 
 </div>
+<%
+    String success = request.getParameter("success");
+    if ("updated".equals(success)) {
+%>
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Profile Updated!',
+        text: 'Your profile has been updated successfully.',
+        confirmButtonColor: '#7b1fa2',
+        timer: 2500,
+        showConfirmButton: true
+    });
+</script>
+<%
+    }
+%>
+
 
 <jsp:include page="footer.jsp" />
-
-</body>
-</html>

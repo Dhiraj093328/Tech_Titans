@@ -13,54 +13,44 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet 
-{
+public class LoginServlet extends HttpServlet {
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-    {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-        // 1️)Get form data
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        try (Connection con = DBConnection.getConnection()) 
-        {
+        try (Connection con = DBConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(
+                     "SELECT user_id, name FROM users WHERE email=? AND password=?")) {
 
-            // 2)SQL query
-            String sql = "SELECT user_id FROM users WHERE email=? AND password=?";
-            PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, email);
             ps.setString(2, password);
 
             ResultSet rs = ps.executeQuery();
 
-            // 3️)If user exists
-            if (rs.next()) 
-            {
+            if (rs.next()) {
 
                 int userId = rs.getInt("user_id");
+                String userName = rs.getString("name"); // ✅ FETCH NAME
 
-                // 4️)Create session
+                // Create session
                 HttpSession session = request.getSession();
                 session.setAttribute("userId", userId);
+                session.setAttribute("userName", userName); // ✅ STORE NAME
 
-                // 5️)Redirect to dashboard or profile
-                response.sendRedirect("ProfileServlet");
+                // Redirect to DashboardServlet
+                response.sendRedirect("DashboardServlet");
 
-            } 
-            else 
-            {
-                // 6️)Login failed
-                request.setAttribute("errorMessage", "Invalid Email or Password");
-                request.getRequestDispatcher("login.jsp")
-                       .forward(request, response);
+            } else {
+                request.setAttribute("errorMessage", "Invalid email or password");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             }
 
-        } 
-        catch (Exception e) 
-        {
-            System.out.println(e);
-            request.setAttribute("errorMessage", "Server error");
+        } catch (Exception e) {
+            e.printStackTrace();
+            request.setAttribute("errorMessage", "Something went wrong");
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }

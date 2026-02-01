@@ -1,137 +1,74 @@
-@charset "UTF-8";
-/*Common Body Styling*/
-body 
-{
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: url("../images/salon-bg.jpg") no-repeat center center fixed;
-    background-size: cover;
+/* ===== Profile Page Container ===== */
+.profile-container {
+    max-width: 750px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px 35px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-/*Common Box Styling*/
-.container,
-.profile-box,
-.edit-box,
-.password-box,
-.history-box,
-.notify-box,
-.error-box 
-{
-    background: rgba(255, 255, 255, 0.95);
-    padding: 20px;
-    border-radius: 10px;
-    margin: 80px auto;
+/* ===== Profile Heading ===== */
+.profile-container h2 {
+    margin-bottom: 25px;
+    font-size: 26px;
+    color: #5e1785;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-/*Headings*/
-h2 {
-    text-align: center;
-    color: #4a148c;
-    margin-bottom: 15px;
+/* ===== Profile Rows ===== */
+.profile-row {
+    margin: 12px 0;
+    font-size: 17px;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Labels & Inputs*/
-label 
-{
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
+.profile-row span {
+    font-weight: 600;
+    color: #6a1b9a;
+    width: 130px;
+    display: inline-block;
 }
 
-input, textarea 
-{
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+/* ===== Action Buttons ===== */
+.profile-actions {
+    margin-top: 30px;
 }
 
-/*Buttons*/
-button 
-{
-    padding: 8px 15px;
-    background: #4a148c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover 
-{
-    background: #6a1b9a;
-}
-
-/* Links */
-a {
+.profile-actions a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 12px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #8e24aa, #c2185b);
+    color: #fff;
     text-decoration: none;
-    color: #4a148c;
-    font-weight: bold;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-a:hover 
-{
-    text-decoration: underline;
+.profile-actions a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(194, 24, 91, 0.4);
 }
 
-/*Action Buttons*/
-.actions 
-{
-    text-align: center;
-    margin-top: 15px;
-}
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .profile-container {
+        margin: 20px;
+        padding: 25px;
+    }
 
-/* Tables*/
-table 
-{
-    width: 100%;
-    border-collapse: collapse;
-}
+    .profile-row span {
+        width: auto;
+        display: block;
+        margin-bottom: 4px;
+    }
 
-th, td
- {
-    padding: 10px;
-    text-align: center;
-    border-bottom: 1px solid #ccc;
-}
-
-th 
-{
-    background: #4a148c;
-    color: white;
-}
-
-/*Notification Styles*/
-.notify 
-{
-    padding: 12px;
-    margin-bottom: 10px;
-    background: #f3e5f5;
-    border-left: 5px solid #4a148c;
-}
-
-.notify.unread 
-{
-    background: #fff3e0;
-    border-left-color: #ff6f00;
-    font-weight: bold;
-}
-
-.time 
-{
-    font-size: 12px;
-    color: #555;
-    margin-top: 5px;
-}
-
-/* Footer  */
-.footer
- {
-    background: #4a148c;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    margin-top: 40px;
-    font-size: 14px;
+    .profile-actions a {
+        margin-bottom: 10px;
+    }
 }

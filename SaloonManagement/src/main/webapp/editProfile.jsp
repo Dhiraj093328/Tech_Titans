@@ -3,9 +3,15 @@
 
 <%@ page import="test.User" %>
 
+
 <%
-    // Get user object sent from ProfileServlet
+    //Get user object from profile servlet
     User user = (User) request.getAttribute("user");
+
+    if (user == null) {
+        response.sendRedirect("login.jsp");
+        return;
+    }
 %>
 
 <!DOCTYPE html>

@@ -6,11 +6,11 @@
     Integer userId = (Integer) session.getAttribute("userId");
     String userName = (String) session.getAttribute("userName");
 
-    if (userId == null) 
-    {
-        response.sendRedirect("login.jsp");
-        return;
-    }
+    //if (userId == null) 
+    //{
+     //   response.sendRedirect("login.jsp");
+     //   return;
+    //}
 %>
 
 <!DOCTYPE html>
@@ -71,7 +71,7 @@
     </div>
 </div>
 
-
+<a href="AppointmentHistoryServlet">View Appointments</a>
 
 <!-- Footer -->
 <jsp:include page="footer.jsp" />
