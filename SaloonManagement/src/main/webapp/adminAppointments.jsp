@@ -29,5 +29,7 @@
     </td>
 </tr>
 </table>
+
+<link rel="stylesheet" href="common.css">
 </body>
 </html>

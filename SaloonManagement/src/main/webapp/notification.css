@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+/* Page Background */
+body {
+    background:
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+        url("../images/1.jpg") no-repeat center center fixed !important;
+    background-size: cover;
+}
+
+/*Notification Container */
+.notify-box {
+    width: 70%;
+    max-width: 800px;
+    margin: 80px auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Title */
+.notify-box h2 {
+    text-align: center;
+    color: #4a148c;
+    margin-bottom: 25px;
+    font-size: 30px;
+    letter-spacing: 0.5px;
+}
+
+/*Notification Card*/
+.notify {
+    padding: 16px 18px;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #f3e5f5, #fce4ec);
+    border-left: 6px solid #4a148c;
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.notify:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* Unread Notification*/
+.notify.unread {
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    border-left-color: #ff6f00;
+    font-weight: bold;
+}
+
+/* Notification Time*/
+.time {
+    font-size: 13px;
+    color: #666;
+    margin-top: 8px;
+    text-align: right;
+}
+
+/* Back Button*/
+.back {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back a {
+    padding: 12px 26px;
+    background: linear-gradient(45deg, #c2185b, #7b1fa2);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.back a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/*  Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+html, body {
+    height: 100%;
+}
+
