@@ -8,10 +8,9 @@ public class Notification {
     private boolean read;
     private Timestamp createdAt;
 
-    // No-arg constructor
+   
     public Notification() {}
 
-    // Getters & Setters
     public String getMessage() {
         return message;
     }
