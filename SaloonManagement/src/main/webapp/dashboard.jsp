@@ -71,8 +71,6 @@
     </div>
 </div>
 
-<a href="AppointmentHistoryServlet">View Appointments</a>
-
 <!-- Footer -->
 <jsp:include page="footer.jsp" />
 
