@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saloon Management System</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<<<<<<< HEAD
 <h1>Hii</h1>
     <h1 style="color:green; text-align:center;">
           Project is running 
@@ -16,5 +19,99 @@
 <a href="adminRegister.jsp">admin register</a><br>
 <a href="therapistLogin.jsp">therapist login</a><br>
 <a href="therapistRegister.jsp">therapist register</a><br>
+=======
+    <!-- Animated background particles -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Colorful sparkles -->
+        <div class="sparkle sparkle1">✨</div>
+        <div class="sparkle sparkle2">💫</div>
+        <div class="sparkle sparkle3">⭐</div>
+        <div class="sparkle sparkle4">🌟</div>
+        
+        <!-- Decorative corner elements -->
+        <div class="corner-decoration corner-tl"></div>
+        <div class="corner-decoration corner-tr"></div>
+        <div class="corner-decoration corner-bl"></div>
+        <div class="corner-decoration corner-br"></div>
+        
+        <!-- Logo/Icon -->
+        <div class="logo-container">
+            <div class="logo-icon">✂️</div>
+        </div>
+        
+        <h1>✨ Welcome to Saloon Management ✨</h1>
+        <p class="subtitle">Your Gateway to Beauty & Wellness Excellence</p>
+        
+        <div class="btn-group">
+            <a href="#" class="btn btn-admin" onclick="openModal(); return false;">
+                <span class="btn-icon">👨‍💼</span>
+                <span class="btn-text">Admin Portal</span>
+                <span class="btn-arrow">→</span>
+            </a>
+            
+            <div class="divider">
+                <span class="divider-text">OR</span>
+            </div>
+            
+            <a href="#" class="btn btn-user">
+                <span class="btn-icon">👤</span>
+                <span class="btn-text">User Login</span>
+                <span class="btn-arrow">→</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="adminModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            
+            <div class="modal-header">
+                <div class="modal-icon">🔐</div>
+                <h2>Select Admin Type</h2>
+                <p class="modal-subtitle">Choose your access level</p>
+            </div>
+            
+            <div class="modal-btn-group">
+                <a href="adminLogin.jsp" class="modal-btn btn-owner">
+                    <span class="modal-btn-icon">👑</span>
+                    <div class="modal-btn-content">
+                        <span class="modal-btn-title">Owner Login</span>
+                        <span class="modal-btn-desc">Full system access</span>
+                    </div>
+                    <span class="modal-btn-arrow">→</span>
+                </a>
+                
+                <a href="therapistLogin.jsp" class="modal-btn btn-therapist">
+                    <span class="modal-btn-icon">💆</span>
+                    <div class="modal-btn-content">
+                        <span class="modal-btn-title">Therapist Login</span>
+                        <span class="modal-btn-desc">Service provider access</span>
+                    </div>
+                    <span class="modal-btn-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">© 2024 Salon Management System. All Rights Reserved.</p>
+            <p class="footer-subtext">Crafted with ❤️ for Beauty & Wellness Professionals</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+>>>>>>> 983bf04651d83efde8b07e21f66b6f60507ea4b0
 </body>
 </html>
