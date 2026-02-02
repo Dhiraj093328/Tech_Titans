@@ -1,10 +1,13 @@
 package test;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -31,6 +34,10 @@ public class ShopLogin extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
 		
+		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+		response.setHeader("Pragma", "no-cache");
+		response.setDateHeader("Expires", 0);
+		
 		String user = request.getParameter("auser");
 		String pass = request.getParameter("apass");
 		
@@ -38,17 +45,23 @@ public class ShopLogin extends HttpServlet {
 		{
 			Shop_Owner s = Shop_OwnerDao.getShopOwner(user);
 			
-			if(s!=null && s.getPassword().equals(pass))
-			{
-				pw.print("login success");
-			}
-			else
-			{
-				pw.print("login fails");
-			}
+			if (s != null && s.getPassword().equals(pass))
+			 {
+	                
+	                HttpSession session = request.getSession();
+		        	session.setAttribute("loginSuccess", "Welcome back, Admin!");
+		        	response.sendRedirect("index.jsp");
+	         }else
+	         {
+	        	 request.setAttribute("error", "Invalid username or password");
+	             request.getRequestDispatcher("adminLogin.jsp").forward(request, response);
+	             return;
+	         }
 		}catch(Exception e)
 		{
 			System.out.println(e);
+			request.setAttribute("error", "Something went wrong. Please try again.");
+            request.getRequestDispatcher("adminLogin.jsp").forward(request, response);
 		}
 		
 	}

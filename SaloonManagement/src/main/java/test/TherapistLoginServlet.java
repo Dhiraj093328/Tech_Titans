@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -30,6 +32,10 @@ public class TherapistLoginServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
 		
+		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+		response.setHeader("Pragma", "no-cache");
+		response.setDateHeader("Expires", 0);
+
 		String username = request.getParameter("tuser");
 		String password = request.getParameter("tpass");
 		
@@ -37,16 +43,26 @@ public class TherapistLoginServlet extends HttpServlet {
 		{
 			Therapist t = TherapistDao.getTherapist(username);
 			
-			if(t!=null && t.getPassword().equals(password))
-			{
-				pw.print("Login success");
-			}else
-			{
-				pw.print("Login Fail");
+			if (t != null && t.getPassword().equals(password)) {
+
+			    HttpSession session = request.getSession();
+			    session.setAttribute("loginSuccess", "Login successful!");
+			    session.setAttribute("therapist", t);
+
+			    response.sendRedirect("index.jsp");
+			    return;
+			} else {
+
+			    request.setAttribute("error", "Invalid username or password");
+			    request.getRequestDispatcher("therapistLogin.jsp")
+			           .forward(request, response);
 			}
+
 		}catch(Exception e)
 		{
 			System.out.println(e);
+			request.setAttribute("error", "Something went wrong. Please try again.");
+            request.getRequestDispatcher("therapistLogin.jsp").forward(request, response);
 		}
 		
 	}

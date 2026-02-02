@@ -8,6 +8,14 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 <style>
+.alert {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.alert:not(.show) {
+    opacity: 0;
+    transform: translateY(-10px);
+}
 #loginBtn {
     border-radius: 14px;
     background: linear-gradient(135deg, #667eea, #764ba2);
@@ -39,23 +47,31 @@ body {
       		<div class="card shadow-lg rounded-4">
 				<div class="card-body p-4">
 					<h2 class="text-center fw-bold">Therapist Login</h2>
+<%
+String error   = (String) request.getAttribute("error");
+%>
+
+
+<% if (error != null) { %>
+<div id="errorMsg" class="alert alert-danger text-center fade show">
+    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+    <%= error %>
+</div>
+<% } %>
+
 					<form action="TherapistLoginServlet" method="post" class="needs-validation" novalidate>
 						<div class="input-group mt-3">
-							<div class="input-group">
     							<span class="input-group-text"><i class="bi bi-person-fill"></i></span>
     							<input type="text" class="form-control" name="tuser" placeholder="Enter username" required minlength="4">
     							<div class="invalid-feedback">
       								Please enter your username (min 4 characters)
     							</div>
-							</div>
 						</div>
 						<div class="input-group mt-3">
-							<div class="input-group">
     							<span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
     							<input type="password" class="form-control" id="password" name="tpass" placeholder="Enter password" required minlength="6">
     						<div class="invalid-feedback">
 						      Password must be at last 6 characters
-   							</div>
   							</div>
 						</div>
 						<div class="form-check mt-3">
@@ -97,6 +113,21 @@ document.querySelector("form").addEventListener("submit", function (e) {
   loader.classList.remove("d-none");
 
   setTimeout(() => this.submit(), 800);
+});
+</script>
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+
+    const success = document.getElementById("successMsg");
+    const error   = document.getElementById("errorMsg");
+
+    if (error) {
+        setTimeout(() => {
+            error.classList.remove("show");
+            setTimeout(() => error.remove(), 300);
+        }, 2000);
+    }
+
 });
 </script>
 <script>
