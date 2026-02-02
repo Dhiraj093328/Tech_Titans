@@ -56,7 +56,7 @@
     <!-- Salon Card 1 -->
     <div class="col-md-4">
       <div class="card salon-card h-100">
-        <<img src="images/7.jpg" class="card-img-top" alt="Lakme Salon">
+        <img src="images/7.jpg" class="card-img-top" alt="Lakme Salon">
         <div class="card-body">
           <h5 class="card-title">Lakme Salon</h5>
           <p class="location"> Pimpri, Pune</p>
@@ -80,7 +80,7 @@
     <!-- Salon Card 2 -->
     <div class="col-md-4">
       <div class="card salon-card h-100">
-          <<img src="images/8.jpg" class="card-img-top" alt="Lakme Salon">
+          <img src="images/8.jpg" class="card-img-top" alt="Lakme Salon">
         <div class="card-body">
           <h5 class="card-title">Jawed Habib Salon</h5>
           <p class="location">Chinchwad, Pune</p>
@@ -93,7 +93,7 @@
   <li>Hair Color <span class="float-end">Rs.1800</span></li>
 </ul>
           <form action="bookAppointment.jsp" method="post">
-            <input type="hidden" name="salon" value="Jawed Habib Chinchwad">
+            <input type="hidden" name="salon" value="Jawed Habib Chinchwad"><br><br>
             <button type="submit" class="btn btn-book text-white w-100">Book Appointment</button>
             </form>
           
@@ -104,7 +104,7 @@
     <!-- Salon Card 3 -->
     <div class="col-md-4">
       <div class="card salon-card h-100">
-       <<img src="images/9.jpg" class="card-img-top" alt="Lakme Salon">
+       <img src="images/9.jpg" class="card-img-top" alt="Lakme Salon">
         <div class="card-body">
           <h5 class="card-title">Naturals Salon</h5>
           <p class="location"> Akurdi, Pune</p>
@@ -117,7 +117,7 @@
   <li>Haircut <span class="float-end">Rs.300</span></li>
 </ul>
           <form action="bookAppointment.jsp" method="post">
-            <input type="hidden" name="salon" value="Naturals Salon Akurdi">
+            <input type="hidden" name="salon" value="Naturals Salon Akurdi"><br><br>
             <button type="submit" class="btn btn-book text-white w-100">Book Appointment</button>
           </form>
         </div>
@@ -127,10 +127,10 @@
     <!-- Salon Card 4 -->
     <div class="col-md-4">
       <div class="card salon-card h-100">
-               <<img src="images/3.jpg" class="card-img-top" alt="Lakme Salon">
+               <img src="images/3.jpg" class="card-img-top" alt="Lakme Salon">
         <div class="card-body">
           <h5 class="card-title">Lakme Salon For Him and Her</h5>
-          <p class="location">📍 Morewadi, Pimpri-Chinchwade</p>
+          <p class="location"> Morewadi, Pimpri-Chinchwade</p>
           <p class="rating">***** <span class="text-dark">4.9</span></p>
           <p class="card-text">Affordable beauty & wellness services for everyone.</p>
          <h6 class="mt-3">Services & Prices</h6>
@@ -141,7 +141,7 @@
   <li>Party Makeup <span class="float-end">Rs.2500</span></li>
 </ul>
           <form action="bookAppointment.jsp" method="post">
-            <input type="hidden" name="salon" value="Naturals Salon Akurdi">
+            <input type="hidden" name="salon" value="Naturals Salon Akurdi"><br><br>
             <button type="submit" class="btn btn-book text-white w-100">Book Appointment</button>
           </form>
         </div>
@@ -151,7 +151,7 @@
      <!-- Salon Card 5 -->
      <div class="col-md-4">
       <div class="card salon-card h-100">
-               <<img src="images/6.jpg" class="card-img-top" alt="Lakme Salon">
+               <img src="images/6.jpg" class="card-img-top" alt="Lakme Salon">
         <div class="card-body">
           <h5 class="card-title">CARE UNISEX SALON PIMPRI</h5>
           <p class="location">Pimpri, Pune</p>
@@ -166,7 +166,7 @@
 </ul>
           
           <form action="bookAppointment.jsp" method="post">
-            <input type="hidden" name="salon" value="Naturals Salon Akurdi">
+            <input type="hidden" name="salon" value="Naturals Salon Akurdi"><br><br>
             <button type="submit" class="btn btn-book text-white w-100">Book Appointment</button>
           </form>
         </div>
@@ -176,9 +176,9 @@
      <!-- Salon Card 6 -->
      <div class="col-md-4">
       <div class="card salon-card h-100">
-               <<img src="images/2.jpg" class="card-img-top" alt="Lakme Salon">
+               <img src="images/2.jpg" class="card-img-top" alt="Lakme Salon">
         <div class="card-body">
-          <h5 class="card-title">S7 Professional Ladies Beauty Salonr</h5>
+          <h5 class="card-title">S7 Professional Ladies Beauty Salon</h5>
           <p class="location">Pimpri Colony, Pune</p>
           <p class="rating">***** <span class="text-dark">4.9</span></p>
           <p class="card-text">Affordable beauty & wellness services for everyone.</p>
@@ -197,12 +197,87 @@
         </div>
       </div>
     </div>
+    
+    <!--Saloon 7-->
+    <div class="col-md-4">
+  <div class="card salon-card h-100">
+    <img src="images/10.jpg" class="card-img-top" alt="Enrich Salon">
+    <div class="card-body">
+      <h5 class="card-title">Enrich Salon</h5>
+      <p class="location">Wakad, Pune</p>
+      <p class="rating">***** <span class="text-dark">4.7</span></p>
+      <p class="card-text">Luxury salon offering premium hair & skin treatments.</p>
+
+      <h6 class="mt-3">Services & Prices</h6>
+      <ul class="list-unstyled service-list mb-3">
+        <li>Haircut <span>Rs.500</span></li>
+        <li>Keratin Treatment <span>Rs.4500</span></li>
+        <li>Luxury Facial <span>Rs.2200</span></li>
+      </ul>
+
+      <form action="bookAppointment.jsp" method="post">
+        <input type="hidden" name="salon" value="Enrich Salon Wakad">
+        <button class="btn btn-book text-white w-100">Book Appointment</button>
+      </form>
+    </div>
+  </div>
+</div>
+    <!--Saloon 8-->
+    <div class="col-md-4">
+  <div class="card salon-card h-100">
+    <img src="images/5.jpg" class="card-img-top" alt="Green Trends Salon">
+    <div class="card-body">
+      <h5 class="card-title">Green Trends Salon</h5>
+      <p class="location"> Bhosari, Pune</p>
+      <p class="rating">**** <span class="text-dark">4.4</span></p>
+      <p class="card-text">Trusted brand for hair styling and grooming services.</p>
+
+      <h6 class="mt-3">Services & Prices</h6>
+      <ul class="list-unstyled service-list mb-3">
+        <li>Haircut <span>Rs.350</span></li>
+        <li>Hair Coloring <span>Rs.1600</span></li>
+        <li>Hair Spa <span>Rs.1100</span></li>
+      </ul>
+
+      <form action="bookAppointment.jsp" method="post">
+        <input type="hidden" name="salon" value="Green Trends Bhosari">
+        <button class="btn btn-book text-white w-100">Book Appointment</button>
+      </form>
+    </div>
+  </div>
+</div>
+    
+    <!-- Saloon 9 -->
+    <div class="col-md-4">
+  <div class="card salon-card h-100">
+    <img src="images/11.jpg" class="card-img-top" alt="Looks Salon">
+    <div class="card-body">
+      <h5 class="card-title">Looks Salon</h5>
+      <p class="location"> Nigdi, Pune</p>
+      <p class="rating">***** <span class="text-dark">4.6</span></p>
+      <p class="card-text">Modern styling, makeup & bridal beauty solutions.</p>
+
+      <h6 class="mt-3">Services & Prices</h6>
+      <ul class="list-unstyled service-list mb-3">
+        <li>Haircut & Styling <span>Rs.450</span></li>
+        <li>Party Makeup <span>Rs.2800</span></li>
+        <li>Skin Treatment <span>Rs.2000</span></li>
+      </ul>
+
+      <form action="bookAppointment.jsp" method="post">
+        <input type="hidden" name="salon" value="Looks Salon Nigdi">
+        <button class="btn btn-book text-white w-100">Book Appointment</button>
+      </form>
+    </div>
+  </div>
+</div>
+    
 
   </div>
 </div>
 
 <footer class="text-center mt-5 py-3 bg-light">
-  <small>© 2026 Salon Management System | Pimpri Chinchwad</small>
+  <small>Â© 2026 Salon Management System | Pimpri Chinchwad</small>
 </footer>
 
 </body>

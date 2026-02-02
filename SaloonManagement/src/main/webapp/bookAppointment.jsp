@@ -75,14 +75,7 @@
                 <input type="hidden" name="salon"
                        value="<%= request.getParameter("salon") %>">
 
-                <!-- Name -->
-                <div class="mb-3">
-                    <label class="form-label">
-                        <i class="fa-solid fa-user"></i> Your Name
-                    </label>
-                    <input type="text" name="customerName"
-                           class="form-control" placeholder="Enter your name" required>
-                </div>
+               
 
                 <!-- Service -->
                 <div class="mb-3">
@@ -107,6 +100,15 @@
                     <input type="date" name="date"
                            class="form-control" required>
                 </div>
+                
+                <!-- Time -->
+                 <div class="mb-4">
+                  <label class="form-label">
+                  <i class="fa-solid fa-clock"></i> Appointment Time
+                  </label>
+                  <input type="time" name="time"   class="form-control" required>
+</div>
+                
 
                 <!-- Button -->
                 <button type="submit" class="btn btn-confirm w-100 text-white">

@@ -79,6 +79,9 @@
   <!--                                                                      -->
   <!--   useAcceptRanges     Should the Accept-Ranges header be included    -->
   <!--                       in responses where appropriate? [true]         -->
+  <!--                       Deprecated. This option will be removed        -->
+  <!--                       without replacement in Tomcat 12 onwards where -->
+  <!--                       it will effectively be hard coded to true.     -->
   <!--                                                                      -->
   <!--  For directory listing customization. Checks localXsltFile, then     -->
   <!--  globalXsltFile, then defaults to original behavior.                 -->
@@ -106,11 +109,11 @@
   <!--                       listings is enabled? [true]                    -->
   <!--                                                                      -->
   <!--   allowPartialPut     Should the server treat an HTTP PUT request    -->
-  <!--                       with a Range header as a partial PUT? Note     -->
-  <!--                       that while RFC 7233 clarified that Range       -->
-  <!--                       headers only valid for GET requests, RFC 9110  -->
-  <!--                       (which obsoletes RFC 7233) now allows partial  -->
-  <!--                       puts. [true]                                   -->
+  <!--                       with a Content-Range header as a partial PUT?  -->
+  <!--                       Note that while RFC 7231 clarified that such a -->
+  <!--                       PUT with a Content-Range header field is a bad -->
+  <!--                       request, RFC 9110 (which obsoletes RFC 7231)   -->
+  <!--                       now allows partial PUT. [true]                 -->
   <!--                                                                      -->
   <!--   directoryRedirectStatusCode                                        -->
   <!--                       Status code to use for directory redirects.    -->
@@ -816,6 +819,10 @@
     <mime-mapping>
         <extension>avi</extension>
         <mime-type>video/x-msvideo</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>avif</extension>
+        <mime-type>image/avif</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>avx</extension>
@@ -2122,6 +2129,10 @@
         <mime-type>text/plain</mime-type>
     </mime-mapping>
     <mime-mapping>
+        <extension>jxl</extension>
+        <mime-type>image/jxl</mime-type>
+    </mime-mapping>
+    <mime-mapping>
         <extension>kar</extension>
         <mime-type>audio/midi</mime-type>
     </mime-mapping>
@@ -2288,6 +2299,14 @@
     <mime-mapping>
         <extension>m2a</extension>
         <mime-type>audio/mpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>m2t</extension>
+        <mime-type>video/mp2t</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>m2ts</extension>
+        <mime-type>video/mp2t</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>m2v</extension>
@@ -2659,7 +2678,7 @@
     </mime-mapping>
     <mime-mapping>
         <extension>mts</extension>
-        <mime-type>model/vnd.mts</mime-type>
+        <mime-type>video/mp2t</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>mus</extension>
@@ -3699,6 +3718,14 @@
         <mime-type>application/x-sql</mime-type>
     </mime-mapping>
     <mime-mapping>
+        <extension>sqlite</extension>
+        <mime-type>application/vnd.sqlite3</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>sqlite3</extension>
+        <mime-type>application/vnd.sqlite3</mime-type>
+    </mime-mapping>
+    <mime-mapping>
         <extension>src</extension>
         <mime-type>application/x-wais-source</mime-type>
     </mime-mapping>
@@ -3945,6 +3972,10 @@
     <mime-mapping>
         <extension>trm</extension>
         <mime-type>application/x-msterminal</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>ts</extension>
+        <mime-type>video/mp2t</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>tsd</extension>
