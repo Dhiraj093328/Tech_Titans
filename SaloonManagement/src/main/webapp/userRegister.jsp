@@ -4,24 +4,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>User Login | Salon Management</title>
+<title>Insert title here</title>
 <link rel="stylesheet" href="userAuth.css">
 </head>
 <body>
 
 <div class="auth-container">
-    <h2>User Login</h2>
+    <h2>User Registration</h2>
 
-    <form action="UserLoginServlet" method="post">
+    <form action="UserRegisterServlet" method="post">
+        <input type="text" name="name" placeholder="Full Name" required>
         <input type="email" name="email" placeholder="Email" required>
         <input type="password" name="password" placeholder="Password" required>
+        <input type="password" placeholder="Confirm Password" required>
 
-        <button type="submit">Login</button>
+        <button type="submit">Register</button>
     </form>
 
     <p class="switch">
-        New user?
-        <a href="userRegister.jsp">Register here</a>
+        Already have an account?
+        <a href="userLogin.jsp">Login</a>
     </p>
 </div>
 
