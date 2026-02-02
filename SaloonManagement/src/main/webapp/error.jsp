@@ -56,9 +56,7 @@ body
     border-radius: 5px;
 }
 </style>
-
 </head>
-
 <body>
 
 <div class="error-box">
