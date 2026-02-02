@@ -1,0 +1,626 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Colorful Animated Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -2;
+}
+
+/* Vibrant Colorful Overlay */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(255, 0, 150, 0.7) 0%, 
+        rgba(255, 100, 0, 0.7) 25%,
+        rgba(138, 43, 226, 0.7) 50%,
+        rgba(0, 191, 255, 0.7) 75%,
+        rgba(255, 20, 147, 0.7) 100%);
+    animation: gradientShift 15s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background: linear-gradient(135deg, 
+            rgba(255, 0, 150, 0.7) 0%, 
+            rgba(255, 100, 0, 0.7) 25%,
+            rgba(138, 43, 226, 0.7) 50%,
+            rgba(0, 191, 255, 0.7) 75%,
+            rgba(255, 20, 147, 0.7) 100%);
+    }
+    50% {
+        background: linear-gradient(135deg, 
+            rgba(0, 191, 255, 0.7) 0%, 
+            rgba(255, 20, 147, 0.7) 25%,
+            rgba(255, 215, 0, 0.7) 50%,
+            rgba(138, 43, 226, 0.7) 75%,
+            rgba(255, 0, 150, 0.7) 100%);
+    }
+}
+
+/* Navigation Bar */
+nav {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(30px);
+    padding: 1.5rem 3rem;
+    box-shadow: 
+        0 8px 40px rgba(255, 0, 150, 0.4),
+        0 0 100px rgba(138, 43, 226, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 4px solid transparent;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.98)),
+        linear-gradient(90deg, #ff0096, #ff6400, #8a2be2, #00bfff, #ff0096);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    animation: navGlow 3s ease-in-out infinite;
+}
+
+@keyframes navGlow {
+    0%, 100% {
+        box-shadow: 
+            0 8px 40px rgba(255, 0, 150, 0.4),
+            0 0 100px rgba(138, 43, 226, 0.2);
+    }
+    50% {
+        box-shadow: 
+            0 10px 50px rgba(0, 191, 255, 0.5),
+            0 0 120px rgba(255, 100, 0, 0.3);
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.8rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ff0096, #ff6400, #8a2be2, #00bfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: logoColorShift 5s ease infinite;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-shadow: 0 0 30px rgba(255, 0, 150, 0.3);
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+@keyframes logoColorShift {
+    0%, 100% {
+        background: linear-gradient(135deg, #ff0096, #ff6400, #8a2be2, #00bfff);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+    33% {
+        background: linear-gradient(135deg, #00bfff, #ff0096, #ff6400, #8a2be2);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+    66% {
+        background: linear-gradient(135deg, #8a2be2, #00bfff, #ff0096, #ff6400);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+}
+
+.logo-icon {
+    font-size: 2.8rem;
+    animation: logoIconAnimation 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 15px rgba(255, 0, 150, 0.8));
+    display: inline-block;
+}
+
+@keyframes logoIconAnimation {
+    0%, 100% { 
+        transform: rotate(0deg) scale(1); 
+        filter: drop-shadow(0 0 15px rgba(255, 0, 150, 0.8));
+    }
+    25% {
+        transform: rotate(20deg) scale(1.15);
+        filter: drop-shadow(0 0 20px rgba(255, 100, 0, 0.9));
+    }
+    50% { 
+        transform: rotate(-10deg) scale(1.1); 
+        filter: drop-shadow(0 0 25px rgba(138, 43, 226, 0.9));
+    }
+    75% {
+        transform: rotate(15deg) scale(1.2);
+        filter: drop-shadow(0 0 20px rgba(0, 191, 255, 0.9));
+    }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu button {
+    background: linear-gradient(135deg, #ff0096 0%, #ff6400 50%, #8a2be2 100%);
+    color: white;
+    border: none;
+    padding: 1.1rem 2.5rem;
+    border-radius: 60px;
+    cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: 700;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 
+        0 10px 30px rgba(255, 0, 150, 0.5),
+        inset 0 -3px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+}
+
+/* Shimmer Effect */
+.nav-menu button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transition: left 0.7s;
+}
+
+.nav-menu button:hover::before {
+    left: 100%;
+}
+
+/* Ripple Effect on Click */
+.nav-menu button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.nav-menu button:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Hover Effects */
+.nav-menu button:hover {
+    transform: translateY(-8px) scale(1.1) rotate(2deg);
+    box-shadow: 
+        0 20px 50px rgba(255, 0, 150, 0.8),
+        0 0 60px rgba(138, 43, 226, 0.6),
+        inset 0 -3px 10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #00bfff 0%, #8a2be2 50%, #ff0096 100%);
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    letter-spacing: 1.5px;
+}
+
+.nav-menu button:active {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.nav-menu button span {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Icon Animation in Button */
+.nav-menu button:hover span {
+    animation: iconBounce 0.6s ease;
+}
+
+@keyframes iconBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Glow Pulse Effect */
+.nav-menu button {
+    animation: buttonGlow 3s ease-in-out infinite;
+}
+
+@keyframes buttonGlow {
+    0%, 100% {
+        box-shadow: 
+            0 10px 30px rgba(255, 0, 150, 0.5),
+            inset 0 -3px 10px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        box-shadow: 
+            0 10px 35px rgba(138, 43, 226, 0.6),
+            inset 0 -3px 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Floating Indicator */
+.nav-menu li::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff0096, #ff6400, #8a2be2, #00bfff);
+    border-radius: 10px;
+    transition: transform 0.4s ease;
+    box-shadow: 0 0 20px rgba(255, 0, 150, 0.8);
+}
+
+.nav-menu li:hover::before {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* Particle Effect on Hover */
+.nav-menu button:hover {
+    animation: particleFloat 0.6s ease;
+}
+
+@keyframes particleFloat {
+    0% { transform: translateY(-8px) scale(1.1); }
+    50% { transform: translateY(-12px) scale(1.12); }
+    100% { transform: translateY(-8px) scale(1.1); }
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    color: white;
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 
+        0 0 20px rgba(255, 0, 150, 0.8),
+        0 0 40px rgba(255, 100, 0, 0.6),
+        3px 3px 10px rgba(0, 0, 0, 0.5);
+    animation: titleGlow 2s ease-in-out infinite alternate;
+    letter-spacing: 2px;
+    font-weight: 900;
+}
+
+@keyframes titleGlow {
+    from {
+        text-shadow: 
+            0 0 20px rgba(255, 0, 150, 0.8),
+            0 0 40px rgba(255, 100, 0, 0.6),
+            3px 3px 10px rgba(0, 0, 0, 0.5);
+    }
+    to {
+        text-shadow: 
+            0 0 30px rgba(0, 191, 255, 0.9),
+            0 0 50px rgba(138, 43, 226, 0.7),
+            3px 3px 10px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.welcome-text {
+    color: white;
+    font-size: 1.5rem;
+    max-width: 800px;
+    line-height: 2;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.8s ease;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.admin-info {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(25px);
+    padding: 3rem 4rem;
+    border-radius: 30px;
+    color: white;
+    font-size: 1.2rem;
+    line-height: 2.2;
+    max-width: 900px;
+    box-shadow: 
+        0 15px 50px rgba(255, 0, 150, 0.4),
+        0 0 80px rgba(138, 43, 226, 0.3);
+    animation: fadeIn 1s ease;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.5s ease;
+    font-weight: 500;
+}
+
+.admin-info:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 
+        0 20px 60px rgba(255, 0, 150, 0.6),
+        0 0 100px rgba(138, 43, 226, 0.5);
+    background: rgba(255, 255, 255, 0.35);
+    border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Colorful Floating Circles */
+.decorative-circle {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(80px);
+    opacity: 0.6;
+}
+
+.circle-1 {
+    width: 400px;
+    height: 400px;
+    top: -150px;
+    right: -150px;
+    background: radial-gradient(circle, rgba(255, 0, 150, 0.8), transparent);
+    animation: float 8s ease-in-out infinite;
+}
+
+.circle-2 {
+    width: 350px;
+    height: 350px;
+    bottom: -100px;
+    left: -100px;
+    background: radial-gradient(circle, rgba(0, 191, 255, 0.8), transparent);
+    animation: float 10s ease-in-out infinite reverse;
+}
+
+.circle-3 {
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.7), transparent);
+    animation: float 12s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -30px) scale(1.1); }
+    66% { transform: translate(-30px, 30px) scale(0.9); }
+}
+
+/* Sparkle Effect */
+.sparkle {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: sparkleAnimation 2s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes sparkleAnimation {
+    0%, 100% { 
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% { 
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Footer */
+footer {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem 3rem;
+    text-align: center;
+    box-shadow: 0 -4px 30px rgba(255, 0, 150, 0.3);
+    position: relative;
+    z-index: 100;
+    border-top: 3px solid transparent;
+    border-image: linear-gradient(90deg, #ff0096, #ff6400, #8a2be2, #00bfff) 1;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    background: linear-gradient(135deg, #ff0096, #8a2be2, #00bfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 1.2rem;
+}
+
+.footer-links a {
+    color: #ff0096;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 3px;
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff0096, #ff6400, #8a2be2, #00bfff);
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #8a2be2;
+    transform: translateY(-3px);
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+/* Notification Animations */
+@keyframes slideInRight {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.2rem;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .nav-menu button {
+        width: 100%;
+        padding: 1rem 2rem;
+    }
+
+    .nav-menu li::before {
+        display: none;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    .welcome-text {
+        font-size: 1.2rem;
+        padding: 1.2rem 1.5rem;
+    }
+
+    .admin-info {
+        padding: 2rem;
+        font-size: 1.05rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    footer {
+        padding: 1.5rem 1rem;
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome Admin Page</title>
+<link rel="stylesheet" href="Owner.css">
+</head>
+<body>
+    <!-- Decorative Colorful Circles -->
+    <div class="decorative-circle circle-1"></div>
+    <div class="decorative-circle circle-2"></div>
+    <div class="decorative-circle circle-3"></div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <span class="logo-icon">&#9986;</span>
+            <span>Salon Admin Portal</span>
+        </div>
+        <ul class="nav-menu">
+            <li><button onclick="navigateToHome()"><span>&#127968; Home</span></button></li>
+            <li><button onclick="window.location.href='appointment.jsp'"><span>&#128197; Appointments</span></button></li>
+            <li><button onclick="navigateToProfile()"><span>&#128100; Profile</span></button></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Welcome to Salon Management</h1>
+        <p class="welcome-text">
+            Manage your salon efficiently with our comprehensive admin portal. 
+            Handle appointments, track services, and grow your business seamlessly.
+        </p>
+        <div class="admin-info">
+            <p>
+                As a salon owner, you have complete control over your business operations. 
+                Use the navigation above to access appointment requests, manage your profile, 
+                and keep track of all your salon activities. Our platform is designed to make 
+                salon management simple and effective, giving you more time to focus on what matters most.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Salon Management System. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#contact">Contact Us</a>
+                <a href="#help">Help Center</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Owner.js"></script>
+</body>
+</html>
