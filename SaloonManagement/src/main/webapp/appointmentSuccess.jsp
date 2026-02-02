@@ -28,8 +28,9 @@
 
       <div class="modal-body text-center">
         <p><b>Appointment Date:</b> <%= request.getAttribute("date") %></p>
-        <p><b>Service:</b> <%= request.getAttribute("service") %></p>
         <p><b>Appointment Time:</b> <%= request.getAttribute("time") %></p>
+        <p><b>Service Chosen:</b> <%= request.getAttribute("service") %></p>
+        
       </div>
 
       <div class="modal-footer justify-content-center">
