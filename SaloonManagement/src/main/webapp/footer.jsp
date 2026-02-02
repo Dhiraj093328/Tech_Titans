@@ -4,7 +4,8 @@
 <link rel="stylesheet" href="common.css">
 
 <style>
-.footer {
+.footer 
+{
     background: linear-gradient(90deg, #4a148c, #7b1fa2);
     color: white;
     text-align: center;
@@ -12,7 +13,7 @@
     font-size: 14px;
     margin-top: 40px;
 
-    /* ✨ Soft glow like navbar */
+    /*Soft glow like navbar*/
     box-shadow: 0 -6px 20px rgba(123, 31, 162, 0.55);
 
     border: none;
@@ -20,7 +21,8 @@
 }
 
 .footer::before,
-.footer::after {
+.footer::after 
+{
     content: none;
     display: none;
 }

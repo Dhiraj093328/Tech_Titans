@@ -53,7 +53,8 @@ public class NotificationServlet extends HttpServlet
             rs = ps.executeQuery();
 
             // 4️)Store data in list
-            while (rs.next()) {
+            while (rs.next())
+            {
                 Notification n = new Notification();
                 n.setMessage(rs.getString("message"));
                 n.setRead(rs.getBoolean("is_read"));

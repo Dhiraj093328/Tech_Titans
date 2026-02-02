@@ -24,7 +24,7 @@ public class AppointmentHistoryServlet extends HttpServlet
         // 1️)Get session
         HttpSession session = request.getSession(false);
 
-        // Session check
+        // 2)Session check
         if (session == null || session.getAttribute("userId") == null) {
             response.sendRedirect("login.jsp");
             return;
@@ -43,8 +43,7 @@ public class AppointmentHistoryServlet extends HttpServlet
             con = DBConnection.getConnection();
 
             //3)SQL to fetch appointment history
-            String sql = "SELECT salon_name, service_name, appointment_date, " +
-                         "appointment_time, status FROM appointments WHERE user_id=?";
+            String sql = "SELECT salon_name, service_name, appointment_date, " + "appointment_time, status FROM appointments WHERE user_id=?";
 
             ps = con.prepareStatement(sql);
             ps.setInt(1, userId);

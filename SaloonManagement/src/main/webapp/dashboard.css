@@ -1,9 +1,8 @@
 @charset "UTF-8";
 
-/* =========================
-   GLOBAL BODY BACKGROUND
-========================= */
-body {
+/*GLOBAL BODY BACKGROUND*/
+body 
+{
     margin: 0;
     font-family: "Segoe UI", Arial, sans-serif;
 
@@ -18,10 +17,9 @@ body {
     background-size: cover;
 }
 
-/* =========================
-   DASHBOARD CONTAINER
-========================= */
-.dashboard {
+/*DASHBOARD CONTAINER*/
+.dashboard 
+{
     width: 85%;
     margin: 80px auto;
 
@@ -29,10 +27,9 @@ body {
     backdrop-filter: blur(4px);
 }
 
-/* =========================
-   WELCOME SECTION
-========================= */
-.welcome-box {
+/*WELCOME SECTION*/
+.welcome-box 
+{
     background: rgba(255, 255, 255, 0.92);
     padding: 22px;
     border-radius: 12px;
@@ -40,29 +37,29 @@ body {
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.welcome-box h2 {
+.welcome-box h2 
+{
     color: #4a148c;
     margin-bottom: 5px;
 }
 
-.welcome-box p {
+.welcome-box p 
+{
     color: #555;
     font-size: 15px;
 }
 
-/* =========================
-   DASHBOARD CARDS GRID
-========================= */
-.cards {
+/*DASHBOARD CARDS GRID*/
+.cards 
+{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 22px;
 }
 
-/* =========================
-   INDIVIDUAL CARD
-========================= */
-.card {
+/*INDIVIDUAL CARD*/
+.card 
+{
     background: rgba(255, 255, 255, 0.88);
     padding: 22px;
     border-radius: 14px;
@@ -75,33 +72,31 @@ body {
     transition: all 0.3s ease;
 }
 
-.card:hover {
+.card:hover
+ {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 15px 30px rgba(0,0,0,0.25);
 }
 
-/* =========================
-   CARD TITLE
-========================= */
-.card h3 {
+/*CARD TITLE*/
+.card h3 
+{
     color: #4a148c;
     margin-bottom: 10px;
     font-size: 20px;
 }
 
-/* =========================
-   CARD DESCRIPTION
-========================= */
-.card p {
+/*CARD DESCRIPTION*/
+.card p 
+{
     font-size: 14px;
     color: #555;
     margin-bottom: 15px;
 }
 
-/* =========================
-   CARD BUTTON
-========================= */
-.card a {
+/*CARD BUTTON*/
+.card a 
+{
     display: inline-block;
     padding: 9px 18px;
     background: linear-gradient(135deg, #6a1b9a, #c2185b);
@@ -112,6 +107,7 @@ body {
     transition: background 0.3s ease;
 }
 
-.card a:hover {
+.card a:hover 
+{
     background: linear-gradient(135deg, #4a148c, #ad1457);
 }

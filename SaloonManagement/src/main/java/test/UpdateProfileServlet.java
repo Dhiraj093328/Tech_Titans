@@ -12,17 +12,17 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/UpdateProfileServlet")
-public class UpdateProfileServlet extends HttpServlet {
-
+public class UpdateProfileServlet extends HttpServlet 
+{
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
+    {
         // Get existing session
         HttpSession session = request.getSession(false);
 
         // Check login
-        if (session == null || session.getAttribute("userId") == null) {
+        if (session == null || session.getAttribute("userId") == null) 
+        {
             response.sendRedirect("login.jsp");
             return;
         }
@@ -36,8 +36,8 @@ public class UpdateProfileServlet extends HttpServlet {
         String address = request.getParameter("address");
 
         try (Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(
-                 "UPDATE users SET name=?, phone=?, address=? WHERE user_id=?")) {
+             PreparedStatement ps = con.prepareStatement("UPDATE users SET name=?, phone=?, address=? WHERE user_id=?")) 
+        {
 
             ps.setString(1, name);
             ps.setString(2, phone);
@@ -46,16 +46,21 @@ public class UpdateProfileServlet extends HttpServlet {
 
             int rowsUpdated = ps.executeUpdate();
 
-            if (rowsUpdated > 0) {
-                // ✅ Success → redirect with flag
+            if (rowsUpdated > 0) 
+            {
+               
                 response.sendRedirect("ProfileServlet?success=updated");
-            } else {
-                // ❌ No update happened
+            } 
+            else
+            {
+                
                 response.sendRedirect("ProfileServlet?error=updateFailed");
             }
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        }
+        catch (Exception e) 
+        {
+            System.out.println(e);
             response.sendRedirect("ProfileServlet?error=exception");
         }
     }

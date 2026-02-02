@@ -7,10 +7,11 @@ public class User
     private String phone;
     private String address;
 
-    // No-arg constructor
-    public User() {}
+    public User() 
+    {
+    	
+    }
 
-    // Getters & Setters
     public String getName() {
         return name;
     }

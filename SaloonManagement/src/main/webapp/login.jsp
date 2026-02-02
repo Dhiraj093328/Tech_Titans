@@ -8,14 +8,16 @@
 <title>User Login</title>
 
 <style>
-body {
+body 
+{
     margin: 0;
     font-family: Arial, sans-serif;
     background: url("images/profile-bg.png") no-repeat center;
     background-size: cover;
 }
 
-.login-box {
+.login-box 
+{
     width: 350px;
     margin: 100px auto;
     background: rgba(255,255,255,0.9);
@@ -23,19 +25,22 @@ body {
     border-radius: 10px;
 }
 
-.login-box h2 {
+.login-box h2 
+{
     text-align: center;
     margin-bottom: 20px;
 }
 
 input[type="email"],
-input[type="password"] {
+input[type="password"] 
+{
     width: 100%;
     padding: 10px;
     margin: 8px 0;
 }
 
-button {
+button 
+{
     width: 100%;
     padding: 10px;
     background: #c2185b;
@@ -45,7 +50,8 @@ button {
     cursor: pointer;
 }
 
-.error {
+.error 
+{
     color: red;
     text-align: center;
     margin-top: 10px;

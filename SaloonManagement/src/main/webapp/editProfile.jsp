@@ -8,7 +8,8 @@
     //Get user object from profile servlet
     User user = (User) request.getAttribute("user");
 
-    if (user == null) {
+    if (user == null)
+    {
         response.sendRedirect("login.jsp");
         return;
     }
@@ -24,14 +25,16 @@
 <link rel="stylesheet" href="profile.css">
 
 <style>
-body {
+body 
+{
     margin: 0;
     font-family: Arial, sans-serif;
     background: url("../images/salon-bg.jpg") no-repeat center;
     background-size: cover;
 }
 
-.edit-box {
+.edit-box 
+{
     width: 400px;
     margin: 80px auto;
     background: rgba(255,255,255,0.9);
@@ -39,30 +42,35 @@ body {
     border-radius: 10px;
 }
 
-.edit-box h2 {
+.edit-box h2 
+{
     text-align: center;
 }
 
-.edit-box label {
+.edit-box label 
+{
     display: block;
     margin-top: 10px;
     font-weight: bold;
 }
 
 .edit-box input, 
-.edit-box textarea {
+.edit-box textarea 
+{
     width: 100%;
     padding: 7px;
     margin-top: 5px;
 }
 
-.actions {
+.actions 
+{
     text-align: center;
     margin-top: 15px;
 }
 
 .actions button, 
-.actions a {
+.actions a 
+{
     padding: 8px 14px;
     margin: 5px;
     border: none;
@@ -75,10 +83,12 @@ body {
 </style>
 
 <script>
-function validateProfile() {
+function validateProfile() 
+{
     let phone = document.getElementById("phone").value;
 
-    if (phone.length != 10) {
+    if (phone.length != 10) 
+    {
         alert("Phone number must be 10 digits");
         return false;
     }
@@ -118,7 +128,6 @@ function validateProfile() {
     </form>
 
 </div>
-
 
 <jsp:include page="footer.jsp" />
 

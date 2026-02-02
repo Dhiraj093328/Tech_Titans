@@ -1,5 +1,6 @@
-/* ===== Profile Page Container ===== */
-.profile-container {
+/*Profile Page Container*/
+.profile-container 
+{
     max-width: 750px;
     margin: 40px auto;
     background: #ffffff;
@@ -8,8 +9,9 @@
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* ===== Profile Heading ===== */
-.profile-container h2 {
+/*Profile Heading*/
+.profile-container h2 
+{
     margin-bottom: 25px;
     font-size: 26px;
     color: #5e1785;
@@ -18,27 +20,31 @@
     gap: 10px;
 }
 
-/* ===== Profile Rows ===== */
-.profile-row {
+/*Profile Rows */
+.profile-row 
+{
     margin: 12px 0;
     font-size: 17px;
     color: #333;
     line-height: 1.6;
 }
 
-.profile-row span {
+.profile-row span 
+{
     font-weight: 600;
     color: #6a1b9a;
     width: 130px;
     display: inline-block;
 }
 
-/* ===== Action Buttons ===== */
-.profile-actions {
+/*Action Buttons*/
+.profile-actions 
+{
     margin-top: 30px;
 }
 
-.profile-actions a {
+.profile-actions a 
+{
     display: inline-block;
     padding: 10px 20px;
     margin-right: 12px;
@@ -50,25 +56,30 @@
     transition: all 0.3s ease;
 }
 
-.profile-actions a:hover {
+.profile-actions a:hover 
+{
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(194, 24, 91, 0.4);
 }
 
-/* ===== Responsive Design ===== */
-@media (max-width: 768px) {
-    .profile-container {
+/*Responsive Design */
+@media (max-width: 768px) 
+{
+    .profile-container 
+    {
         margin: 20px;
         padding: 25px;
     }
 
-    .profile-row span {
+    .profile-row span 
+    {
         width: auto;
         display: block;
         margin-bottom: 4px;
     }
 
-    .profile-actions a {
+    .profile-actions a 
+    {
         margin-bottom: 10px;
     }
 }

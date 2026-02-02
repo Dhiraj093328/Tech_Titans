@@ -17,14 +17,16 @@
 <link rel="stylesheet" href="common.css">
 
 <style>
-body {
+body 
+{
     margin: 0;
     font-family: Arial, sans-serif;
     background: url("../images/salon-bg.jpg") no-repeat center;
     background-size: cover;
 }
 
-.history-box {
+.history-box 
+{
     width: 80%;
     margin: 80px auto;
     background: rgba(255,255,255,0.95);
@@ -32,37 +34,44 @@ body {
     border-radius: 10px;
 }
 
-.history-box h2 {
+.history-box h2 
+{
     text-align: center;
     margin-bottom: 15px;
 }
 
-table {
+table 
+{
     width: 100%;
     border-collapse: collapse;
 }
 
-th, td {
+th, td 
+{
     padding: 10px;
     text-align: center;
     border-bottom: 1px solid #ccc;
 }
 
-th {
+th 
+{
     background: #4a148c;
     color: white;
 }
 
-.status {
+.status 
+{
     font-weight: bold;
 }
 
-.back {
+.back 
+{
     text-align: center;
     margin-top: 15px;
 }
 
-.back a {
+.back a 
+{
     padding: 8px 14px;
     background: #c2185b;
     color: white;
@@ -70,9 +79,7 @@ th {
     border-radius: 5px;
 }
 </style>
-
 </head>
-
 <body>
 
 <jsp:include page="header.jsp" />

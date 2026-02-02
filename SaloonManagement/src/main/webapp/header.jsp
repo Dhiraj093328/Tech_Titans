@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="common.css">
     
 <style>
-.header {
+.header 
+{
     background: #4a148c;
     padding: 15px 30px;
     color: white;
@@ -23,19 +24,22 @@
     align-items: center;
 }
 
-.logo {
+.logo 
+{
     font-size: 22px;
     font-weight: bold;
 }
 
-.nav a {
+.nav a 
+{
     color: white;
     text-decoration: none;
     margin-left: 15px;
     font-weight: bold;
 }
 
-.nav a:hover {
+.nav a:hover 
+{
     text-decoration: underline;
 }
 </style>

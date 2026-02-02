@@ -9,14 +9,16 @@
 <link rel="stylesheet" href="common.css">
 
 <style>
-body {
+body 
+{
     margin: 0;
     font-family: Arial, sans-serif;
     background: url("../images/salon-bg.jpg") no-repeat center;
     background-size: cover;
 }
 
-.password-box {
+.password-box 
+{
     width: 380px;
     margin: 100px auto;
     background: rgba(255,255,255,0.9);
@@ -24,29 +26,34 @@ body {
     border-radius: 10px;
 }
 
-.password-box h2 {
+.password-box h2 
+{
     text-align: center;
 }
 
-.password-box label {
+.password-box label 
+{
     display: block;
     margin-top: 12px;
     font-weight: bold;
 }
 
-.password-box input {
+.password-box input 
+{
     width: 100%;
     padding: 8px;
     margin-top: 5px;
 }
 
-.actions {
+.actions 
+{
     text-align: center;
     margin-top: 15px;
 }
 
 .actions button, 
-.actions a {
+.actions a 
+{
     padding: 8px 14px;
     margin: 5px;
     border: none;

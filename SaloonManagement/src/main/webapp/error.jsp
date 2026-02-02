@@ -3,7 +3,8 @@
 
 <%
     String errorMsg = (String) request.getAttribute("errorMessage");
-    if (errorMsg == null) {
+    if (errorMsg == null)
+    {
         errorMsg = "Something went wrong. Please try again.";
     }
 %>
@@ -16,14 +17,16 @@
 <link rel="stylesheet" href="common.css">
 
 <style>
-body {
+body 
+{
     margin: 0;
     font-family: Arial, sans-serif;
     background: url("../images/salon-bg.jpg") no-repeat center;
     background-size: cover;
 }
 
-.error-box {
+.error-box 
+{
     width: 420px;
     margin: 120px auto;
     background: rgba(255,255,255,0.95);
@@ -32,15 +35,18 @@ body {
     text-align: center;
 }
 
-.error-box h2 {
+.error-box h2 
+{
     color: #c62828;
 }
 
-.error-box p {
+.error-box p 
+{
     margin-top: 10px;
 }
 
-.error-box a {
+.error-box a 
+{
     display: inline-block;
     margin-top: 15px;
     padding: 8px 15px;
@@ -56,7 +62,7 @@ body {
 <body>
 
 <div class="error-box">
-    <h2>Oops! 😟</h2>
+    <h2>Oops!</h2>
     <p><%= errorMsg %></p>
 
     <a href="ProfileServlet">Go Back</a>

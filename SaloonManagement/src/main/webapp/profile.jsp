@@ -10,7 +10,8 @@
 <a href = "changePassword.jsp"></a>
 
 <style>
-.profile-container {
+.profile-container 
+{
     max-width: 700px;
     margin: 40px auto;
     background: #fff;
@@ -19,27 +20,32 @@
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.profile-container h2 {
+.profile-container h2 
+{
     margin-bottom: 20px;
     color: #6a1b9a;
 }
 
-.profile-row {
+.profile-row 
+{
     margin: 10px 0;
     font-size: 17px;
 }
 
-.profile-row span {
+.profile-row span 
+{
     font-weight: bold;
     width: 120px;
     display: inline-block;
 }
 
-.profile-actions {
+.profile-actions 
+{
     margin-top: 25px;
 }
 
-.profile-actions a {
+.profile-actions a 
+{
     display: inline-block;
     margin-right: 10px;
     padding: 10px 18px;
@@ -95,6 +101,5 @@
 <%
     }
 %>
-
 
 <jsp:include page="footer.jsp" />

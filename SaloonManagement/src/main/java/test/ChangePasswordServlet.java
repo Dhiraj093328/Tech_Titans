@@ -13,32 +13,34 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/ChangePasswordServlet")
-public class ChangePasswordServlet extends HttpServlet {
-
-    // 🔹 LOAD CHANGE PASSWORD PAGE
+public class ChangePasswordServlet extends HttpServlet 
+{
+    //LOAD CHANGE PASSWORD PAGE
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException 
+    {
 
         HttpSession session = request.getSession(false);
 
-        if (session == null || session.getAttribute("userId") == null) {
+        if (session == null || session.getAttribute("userId") == null) 
+        {
             response.sendRedirect("login.jsp");
             return;
         }
 
-        request.getRequestDispatcher("changePassword.jsp")
-               .forward(request, response);
+        request.getRequestDispatcher("changePassword.jsp") .forward(request, response);
     }
 
-    // 🔹 UPDATE PASSWORD
+    //UPDATE PASSWORD
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
+    {
 
         HttpSession session = request.getSession(false);
 
-        if (session == null || session.getAttribute("userId") == null) {
+        if (session == null || session.getAttribute("userId") == null) 
+        {
             response.sendRedirect("login.jsp");
             return;
         }
@@ -50,41 +52,38 @@ public class ChangePasswordServlet extends HttpServlet {
 
         try (Connection con = DBConnection.getConnection()) {
 
-            // 1️⃣ Verify old password
-            PreparedStatement ps = con.prepareStatement(
-                "SELECT password FROM users WHERE user_id=?"
-            );
+            // 1️)Verify old password
+            PreparedStatement ps = con.prepareStatement("SELECT password FROM users WHERE user_id=?" );
             ps.setInt(1, userId);
 
             ResultSet rs = ps.executeQuery();
 
-            if (rs.next()) {
+            if (rs.next()) 
+            {
                 String dbPassword = rs.getString("password");
 
-                if (!dbPassword.equals(oldPassword)) {
+                if (!dbPassword.equals(oldPassword)) 
+                {
                     request.setAttribute("errorMessage", "Old password is incorrect");
-                    request.getRequestDispatcher("changePassword.jsp")
-                           .forward(request, response);
+                    request.getRequestDispatcher("changePassword.jsp") .forward(request, response);
                     return;
                 }
             }
 
-            // 2️⃣ Update new password
-            PreparedStatement updatePs = con.prepareStatement(
-                "UPDATE users SET password=? WHERE user_id=?"
-            );
+            //2)Update new password
+            PreparedStatement updatePs = con.prepareStatement("UPDATE users SET password=? WHERE user_id=?");
             updatePs.setString(1, newPassword);
             updatePs.setInt(2, userId);
             updatePs.executeUpdate();
 
-            // 3️⃣ Redirect with success flag
+            //3)Redirect with success
             response.sendRedirect("ProfileServlet?password=changed");
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception e) 
+        {
+            System.out.println(e);
             request.setAttribute("errorMessage", "Unable to change password");
-            request.getRequestDispatcher("changePassword.jsp")
-                   .forward(request, response);
+            request.getRequestDispatcher("changePassword.jsp").forward(request, response);
         }
     }
 }
