@@ -117,7 +117,7 @@ public class TherapistDao {
 		try
 		{
 			Connection con = getConnection();
-			PreparedStatement ps = con.prepareStatement("delete from therapist where id=?");
+			PreparedStatement ps = con.prepareStatement("delete from therapist where therapist_id=?");
 			ps.setInt(1, id);
 			status = ps.executeUpdate();
 			
