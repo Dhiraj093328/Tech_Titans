@@ -15,7 +15,7 @@ public class DBConnection {
         } 
         catch (Exception e) 
         {
-            System.out.println();
+            System.out.println(e);
         }
         return con;
     }
