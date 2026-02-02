@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -47,11 +49,15 @@ public class TherapistRegisterServlet extends HttpServlet {
 		
 		if(status > 0)
 		{
-			pw.print("Registerd Successfully!!");
+			HttpSession session = request.getSession();
+			session.setAttribute("successMsg", "Registration successful! 🎉 Please login");
+			response.sendRedirect("therapistLogin.jsp");
+			return;
 		}
 		else
 		{
-			pw.print("error occurs");
+			request.setAttribute("error", "Registration failed. Please check your inputs or try again.");
+		    request.getRequestDispatcher("therapistRegister.jsp").forward(request, response);
 		}
 		pw.close();
 		

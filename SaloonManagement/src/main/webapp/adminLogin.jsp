@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,6 +58,7 @@ body {
 </style>
 </head>
 <body class="bg-light d-flex align-items-center" style="min-height:100vh;">
+<jsp:include page="success.jsp"/>
 <div class="container mt-4">
 	<div class="row justify-content-center">
 		<div class="col-12 col-sm-10 col-md-6 col-lg-4">

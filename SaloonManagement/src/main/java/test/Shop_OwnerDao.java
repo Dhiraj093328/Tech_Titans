@@ -87,7 +87,7 @@ public class Shop_OwnerDao {
 		try
 		{
 			Connection con = getConnection();
-			PreparedStatement ps = con.prepareStatement("delete from show_owner where id=?");
+			PreparedStatement ps = con.prepareStatement("delete from show_owner where show_owner_id=?");
 			ps.setInt(1, id);
 			
 			status = ps.executeUpdate();

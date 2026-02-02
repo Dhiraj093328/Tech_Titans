@@ -71,6 +71,17 @@ body {
 					<p class="text-center text-muted mb-4">
     					Register your shop to get started
 					</p>
+<%
+String error = (String) request.getAttribute("error");
+if(error != null) {
+%>
+<div class="alert alert-danger text-center fade show mb-3">
+    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+    <%= error %>
+</div>
+<%
+}
+%>
 					<form action="ShopRegister" method="post" class="needs-validation" novalidate>
 						<h6 class="text-uppercase fw-semibold text-primary mt-4 mb-3">
     						Shop Details
@@ -84,7 +95,7 @@ body {
 						</div>
 						<div class="mt-3">
     						<label class="form-label">Registration No.</label>
-    						<input type="text" class="form-control" name="register_no" pattern="[A-Za-z0-9-]{5,20}" required>
+    						<input type="text" class="form-control" name="register_no"  pattern="[A-Za-z0-9-]{5,20}" required>
     						<div class="invalid-feedback">
         						Shop Registerd Number Required
     						</div>
@@ -138,7 +149,7 @@ body {
     						<label class="form-label">Username</label>
     						<div class="input-group">
         						<span class="input-group-text"><i class="bi bi-person"></i></span>
-        						<input type="text" class="form-control" name="auser" required>
+        						<input type="text" class="form-control" name="auser" pattern="[A-Za-z0-9._]{5,20}" required>
         						<div class="invalid-feedback">
         							Shop Username must be 5–20 characters (letters, numbers, . or _)
     							</div>
@@ -148,7 +159,7 @@ body {
     						<label class="form-label">Password</label>
     						<div class="input-group">
         						<span class="input-group-text"><i class="bi bi-lock"></i></span>
-        						<input type="password" class="form-control" id="password" name="apass" required>
+        						<input type="password" class="form-control" id="password" name="apass"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
         						<div class="invalid-feedback">
         							Shop Password must contain uppercase, lowercase, number & 8+ characters
     							</div>
@@ -181,12 +192,9 @@ function togglePassword() {
     const pass = document.getElementById("password");
     pass.type = pass.type === "password" ? "text" : "password";
 }
-</script>
-<script>
 (() => {
     'use strict';
     const forms = document.querySelectorAll('.needs-validation');
-
     Array.from(forms).forEach(form => {
         form.addEventListener('submit', event => {
             if (!form.checkValidity()) {
@@ -197,6 +205,18 @@ function togglePassword() {
         }, false);
     });
 })();
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const errorBox = document.querySelector(".alert");
+    if(errorBox) {
+        setTimeout(() => {
+            errorBox.style.opacity = "0";
+            errorBox.style.transform = "translateY(-10px)";
+            setTimeout(() => errorBox.remove(), 400);
+        }, 3000);
+    }
+});
 </script>
 <script>
 window.addEventListener("pageshow", function () {

@@ -46,10 +46,10 @@ public class TherapistLoginServlet extends HttpServlet {
 			if (t != null && t.getPassword().equals(password)) {
 
 			    HttpSession session = request.getSession();
-			    session.setAttribute("loginSuccess", "Login successful!");
+			    session.setAttribute("successMsg", "Login successful!, Welcome Therapist");
 			    session.setAttribute("therapist", t);
 
-			    response.sendRedirect("index.jsp");
+			    response.sendRedirect("dashboard.jsp");
 			    return;
 			} else {
 
