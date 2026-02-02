@@ -79,24 +79,36 @@ body {
     						<label class="form-label">Shop Name</label>
     						<input type="text" class="form-control" name="shop_name" pattern="[A-Za-z0-9 ]{3,100}" required>
     						<div class="invalid-feedback">
-        						Shop name must be at least 3 characters
+        						Shop name Required and must be at least 3 characters
     						</div>
 						</div>
 						<div class="mt-3">
     						<label class="form-label">Registration No.</label>
     						<input type="text" class="form-control" name="register_no" pattern="[A-Za-z0-9-]{5,20}" required>
+    						<div class="invalid-feedback">
+        						Shop Registerd Number Required
+    						</div>
 						</div>
 						<div class="mt-3">
     						<label class="form-label">Owner Name</label>
-    						<input type="text" class="form-control" name="owner_name" required>
+    						<input type="text" class="form-control" name="owner_name" pattern="[A-Za-z ]{3,100}" required>
+    						<div class="invalid-feedback">
+        						Shop OwnerName must contain only letters (minimum 3 characters)
+    						</div>
 						</div>
 						<div class="mt-3">
 							<label class="form-label">Opening Time</label>
 							<input class="form-control" type="time" name="opening_time" required>
+							<div class="invalid-feedback">
+        						Shop Opening Time Required
+    						</div>
 						</div>
 						<div class="mt-3">
 							<label class="form-label">Closing Time</label>
 							<input class="form-control" type="time" name="closing_time" required>
+							<div class="invalid-feedback">
+        						Shop Closing Time Required
+    						</div>
 						</div>
 						<h6 class="text-uppercase fw-semibold text-primary mt-4 mb-3">
 						Contact Information</h6>
@@ -105,6 +117,9 @@ body {
     						<div class="input-group">
         						<span class="input-group-text"><i class="bi bi-envelope"></i></span>
         						<input type="email" class="form-control" name="email" required>
+        						<div class="invalid-feedback">
+        							Please enter a valid email address
+    							</div>
     						</div>
 						</div>
 						<div class="mt-3">
@@ -112,6 +127,9 @@ body {
     						<div class="input-group">
         						<span class="input-group-text"><i class="bi bi-telephone"></i></span>
         						<input type="text" class="form-control" name="contact_no" pattern="[0-9]{10}" required>
+        						<div class="invalid-feedback">
+        							Shop Contact number must be exactly 10 digits
+    							</div>
     						</div>
 						</div>
 						<h6 class="text-uppercase fw-semibold text-primary mt-4 mb-3">
@@ -121,6 +139,9 @@ body {
     						<div class="input-group">
         						<span class="input-group-text"><i class="bi bi-person"></i></span>
         						<input type="text" class="form-control" name="auser" required>
+        						<div class="invalid-feedback">
+        							Shop Username must be 5–20 characters (letters, numbers, . or _)
+    							</div>
     						</div>
 						</div>
 						<div class="mt-3">
@@ -128,6 +149,9 @@ body {
     						<div class="input-group">
         						<span class="input-group-text"><i class="bi bi-lock"></i></span>
         						<input type="password" class="form-control" id="password" name="apass" required>
+        						<div class="invalid-feedback">
+        							Shop Password must contain uppercase, lowercase, number & 8+ characters
+    							</div>
     						</div>
 						</div>
 						<div class="form-check mt-2">

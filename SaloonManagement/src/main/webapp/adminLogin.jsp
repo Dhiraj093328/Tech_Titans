@@ -53,7 +53,7 @@ body {
 					<form action="ShopLogin" method="post" class="needs-validation" novalidate>
 						<div class="input-group mt-3">
     						<span class="input-group-text">
-        						<i class="bi bi-person"></i>
+        						<i class="bi bi-person-fill"></i>
 						    </span>
     						<input type="text" class="form-control" name="auser"
            					placeholder="Enter username" required>
@@ -63,7 +63,7 @@ body {
 						</div>
 						<div class="input-group mt-3">
     						<span class="input-group-text">
-        						<i class="bi bi-lock"></i>
+        						<i class="bi bi-lock-fill"></i>
     						</span>
     						<input type="password" class="form-control" id="password"
            					name="apass" placeholder="Enter password" required minlength="6">
