@@ -49,8 +49,8 @@ public class ShopLogin extends HttpServlet {
 			 {
 	                
 	                HttpSession session = request.getSession();
-		        	session.setAttribute("loginSuccess", "Welcome back, Admin!");
-		        	response.sendRedirect("index.jsp");
+		        	session.setAttribute("successMsg", "Welcome back, Admin!");
+		        	response.sendRedirect("dashboard.jsp");
 	         }else
 	         {
 	        	 request.setAttribute("error", "Invalid username or password");

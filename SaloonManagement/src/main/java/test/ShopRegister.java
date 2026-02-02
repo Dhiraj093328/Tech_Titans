@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Time;
@@ -56,10 +58,15 @@ public class ShopRegister extends HttpServlet {
 		
 		if(status > 0)
 		{
-			pw.print("Successfully register owner");
+			HttpSession session = request.getSession();
+			session.setAttribute("successMsg", "Registration successful! 🎉 Please login");
+			response.sendRedirect("adminLogin.jsp");
+			return;
+
 		}else
 		{
-			pw.print("error occurs");
+			request.setAttribute("error", "Registration failed. Please check your inputs or try again.");
+		    request.getRequestDispatcher("adminRegister.jsp").forward(request, response);
 		}
 		
 		

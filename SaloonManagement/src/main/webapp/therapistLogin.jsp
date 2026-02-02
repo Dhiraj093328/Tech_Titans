@@ -41,6 +41,7 @@ body {
 </style>
 </head>
 <body class="bg-light d-flex align-items-center" style="min-height:100vh;">
+<jsp:include page="success.jsp"/>
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-12 col-sm-10 col-md-6 col-lg-5">
@@ -118,7 +119,6 @@ document.querySelector("form").addEventListener("submit", function (e) {
 <script>
 window.addEventListener("DOMContentLoaded", () => {
 
-    const success = document.getElementById("successMsg");
     const error   = document.getElementById("errorMsg");
 
     if (error) {
