@@ -41,6 +41,20 @@
 body {
 	background: linear-gradient(135deg, #74ebd5, #9face6);
 }
+.alert {
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 </style>
 </head>
 <body class="bg-light d-flex align-items-center" style="min-height:100vh;">
@@ -50,10 +64,21 @@ body {
 			<div class="card shadow-lg rounded-4">
 				<div class="card-body p-4">
 					<h2 class="text-center fw-bold">Admin Login</h2>
+<%
+String error = (String) request.getAttribute("error");
+if (error != null) {
+%>
+<div id="loginError" class="alert alert-danger text-center fade show mt-3">
+    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+    <%= error %>
+</div>
+<%
+}
+%>
 					<form action="ShopLogin" method="post" class="needs-validation" novalidate>
 						<div class="input-group mt-3">
     						<span class="input-group-text">
-        						<i class="bi bi-person"></i>
+        						<i class="bi bi-person-fill"></i>
 						    </span>
     						<input type="text" class="form-control" name="auser"
            					placeholder="Enter username" required>
@@ -63,7 +88,7 @@ body {
 						</div>
 						<div class="input-group mt-3">
     						<span class="input-group-text">
-        						<i class="bi bi-lock"></i>
+        						<i class="bi bi-lock-fill"></i>
     						</span>
     						<input type="password" class="form-control" id="password"
            					name="apass" placeholder="Enter password" required minlength="6">
@@ -82,10 +107,12 @@ body {
     						<span id="btnText">Login</span>
     						<span id="btnLoader" class="spinner-border spinner-border-sm ms-2 d-none" role="status" aria-hidden="true"></span>
 						</button>
-						<div class="text-center mt-3">
-    						<a href="adminRegister.jsp" class="text-decoration-none">
-    							Don’t have an account? Register
-    						</a>
+						<div  class="text-center mt-3 d-flex justify-content-between" style="max-width: 260px; margin: auto;">
+							<a href="forgat" class="text-decoration-none">
+							Forgat Password?</a>
+  							<a href="adminRegister.jsp" class="text-decoration-none">
+    							Create Account
+  							</a>
 						</div>
 					</form>
 				</div>
@@ -110,6 +137,19 @@ body {
 })();
 </script>
 <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const errorBox = document.getElementById("loginError");
+
+    if (errorBox) {
+        setTimeout(() => {
+            errorBox.style.opacity = "0";
+            errorBox.style.transform = "translateY(-10px)";
+            setTimeout(() => errorBox.remove(), 400);
+        }, 3000);
+    }
+});
+</script>
+<script>
 document.querySelector("form").addEventListener("submit", function (e) {
 
     if (!this.checkValidity()) return;
@@ -125,10 +165,8 @@ document.querySelector("form").addEventListener("submit", function (e) {
     text.textContent = "Logging in";
     loader.classList.remove("d-none");
 
-    // Minimum loader visibility (700ms)
-    setTimeout(() => {
-        form.submit(); // now actually submit
-    }, 700);
+    // Minimum loader visibility (400ms)
+    setTimeout(() => form.submit(), 400);
 });
 </script>
 <script>
