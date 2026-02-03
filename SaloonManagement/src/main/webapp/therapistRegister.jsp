@@ -22,8 +22,9 @@
 }
 </style>
 </head>
-<body class="d-flex align-items-center" style="min-height:100vh;
-background: linear-gradient(135deg, #74ebd5, #9face6);">
+<body style="background: linear-gradient(135deg, #74ebd5, #9face6);">
+<jsp:include page="header.jsp"/>
+<div class="mt-4 d-flex align-items-center" style="min-height:100vh;">
 <div class="container mt-4">
 	<div class="row justify-content-center">
 		<div class="col-md-6">
@@ -111,6 +112,7 @@ background: linear-gradient(135deg, #74ebd5, #9face6);">
 		</div>
 	</div>
 </div>
+</div>
 <script>
 function togglePassword() {
     const pass = document.getElementById("password");
@@ -168,6 +170,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
   });
 })();
 </script>
+<jsp:include page="footer.jsp"/>
 </body>
 <script src="js/bootstrap.bundle.min.js"></script>
 </html>

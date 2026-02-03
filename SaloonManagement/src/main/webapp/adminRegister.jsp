@@ -10,7 +10,6 @@
 <style>
 body {
     min-height: 100vh;
-    background: linear-gradient(135deg, #667eea, #764ba2);
 }
 #registerBtn {
     transition: all 0.3s ease;
@@ -56,7 +55,9 @@ body {
 </style>
 
 </head>
-<body class="d-flex align-items-center">
+<body class="bg-light" style="background: linear-gradient(135deg, #74ebd5, #9face6);">
+<jsp:include page="header.jsp"/>
+<div class="mt-4 d-flex align-items-center">
 <div class="container mt-4">
 	<div class="row justify-content-center">
 		<div class="col-12 col-sm-10 col-md-8 col-lg-6">
@@ -187,6 +188,7 @@ if(error != null) {
 		</div>
 	</div>
 </div>
+</div>
 <script>
 function togglePassword() {
     const pass = document.getElementById("password");
@@ -252,6 +254,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
     }, 800);
 });
 </script>
+<jsp:include page="footer.jsp"/>
 </body>
 <script src="js/bootstrap.bundle.min.js"></script>
 </html>
