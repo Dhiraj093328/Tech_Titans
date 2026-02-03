@@ -1,28 +1,28 @@
 package test;
 
 import jakarta.servlet.ServletException;
-
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
-
+import java.sql.Connection;
 
 /**
- * Servlet implementation class userLoginServlet
+ * Servlet implementation class DBTestServlet
  */
-@WebServlet("/userLoginServlet")
-public class userLoginServlet extends HttpServlet {
+@WebServlet("/DBTestServlet")
+public class DBTestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public userLoginServlet() {
+    public DBTestServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,7 +32,13 @@ public class userLoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		Connection con = LocalDBConnection.getConnection();
+
+        if (con != null) {
+            response.getWriter().println("✅ DATABASE CONNECTED");
+        } else {
+            response.getWriter().println("❌ DATABASE NOT CONNECTED");
+        }
 	}
 
 	/**
@@ -40,18 +46,7 @@ public class userLoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String username = request.getParameter("username");
-        String password = request.getParameter("password");
-
-        UserDAO dao = new UserDAO();
-
-        if (dao.validateUser(username, password)) {
-            HttpSession session = request.getSession();
-            session.setAttribute("username", username);
-            response.sendRedirect("userDashboard.jsp");
-        } else {
-            response.sendRedirect("userLogin.jsp");
-        }
+		doGet(request, response);
 	}
 
 }

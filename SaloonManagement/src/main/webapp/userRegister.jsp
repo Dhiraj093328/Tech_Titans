@@ -13,7 +13,7 @@
     <div class="auth-card">
         <h2>User Registration</h2>
 
-        <form action="UserRegisterServlet" method="post">
+        <form action="register" method="post">
 
             <div class="input-group">
                 <input type="text" name="name" required>

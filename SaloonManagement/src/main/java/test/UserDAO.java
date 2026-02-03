@@ -3,37 +3,38 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 public class UserDAO {
-
-	// REGISTER USER
-    public boolean registerUser(String name, String email, String contact,
-                                String username, String password) {
+	
+	public boolean registerUser(User user) {
         boolean status = false;
-        try {
-            Connection con = DBConnection.getConnection();
 
-            String sql = "INSERT INTO users(name, email, contact_no, username, password) VALUES (?,?,?,?,?)";
+        try {
+            Connection con = LocalDBConnection.getConnection();
+
+            String sql = "INSERT INTO users(name, email, contact_no, username, password) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(sql);
 
-            ps.setString(1, name);
-            ps.setString(2, email);
-            ps.setString(3, contact);
-            ps.setString(4, username);
-            ps.setString(5, password);
+            ps.setString(1, user.getName());
+            ps.setString(2, user.getEmail());
+            ps.setString(3, user.getContactNo());
+            ps.setString(4, user.getUsername());
+            ps.setString(5, user.getPassword());
 
             int rows = ps.executeUpdate();
-            status = rows > 0;
+            if (rows > 0) status = true;
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         return status;
     }
 
     // LOGIN USER
-    public boolean validateUser(String username, String password) {
-        boolean valid = false;
+    public boolean loginUser(String username, String password) {
+        boolean status = false;
+
         try {
-            Connection con = DBConnection.getConnection();
+            Connection con = LocalDBConnection.getConnection();
 
             String sql = "SELECT * FROM users WHERE username=? AND password=?";
             PreparedStatement ps = con.prepareStatement(sql);
@@ -42,11 +43,14 @@ public class UserDAO {
             ps.setString(2, password);
 
             ResultSet rs = ps.executeQuery();
-            valid = rs.next();
+            if (rs.next()) status = true;
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return valid;
+
+        return status;
     }
+
+	
 }
