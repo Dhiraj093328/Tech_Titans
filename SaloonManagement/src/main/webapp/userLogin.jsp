@@ -5,24 +5,34 @@
 <head>
 <meta charset="UTF-8">
 <title>User Login | Salon Management</title>
-<link rel="stylesheet" href="userAuth.css">
+<link rel="stylesheet" href="css/userAuth.css">
 </head>
 <body>
 
-<div class="auth-container">
-    <h2>User Login</h2>
+<div class="auth-wrapper">
+    <div class="auth-card">
+        <h2>User Login</h2>
 
-    <form action="UserLoginServlet" method="post">
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="password" name="password" placeholder="Password" required>
+        <form action="UserLoginServlet" method="post">
 
-        <button type="submit">Login</button>
-    </form>
+            <div class="input-group">
+                <input type="text" name="username" required>
+                <label>Username</label>
+            </div>
 
-    <p class="switch">
-        New user?
-        <a href="userRegister.jsp">Register here</a>
-    </p>
+            <div class="input-group">
+                <input type="password" name="password" required>
+                <label>Password</label>
+            </div>
+
+            <button class="gradient-btn">Login</button>
+        </form>
+
+        <p class="switch">
+            New user?
+            <a href="userRegister.jsp">Register here</a>
+        </p>
+    </div>
 </div>
 
 </body>
