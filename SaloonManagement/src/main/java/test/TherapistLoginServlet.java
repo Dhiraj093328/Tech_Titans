@@ -49,7 +49,7 @@ public class TherapistLoginServlet extends HttpServlet {
 			    session.setAttribute("successMsg", "Login successful!, Welcome Therapist");
 			    session.setAttribute("therapist", t);
 
-			    response.sendRedirect("dashboard.jsp");
+			    response.sendRedirect("HomeTherapist.html");
 			    return;
 			} else {
 
