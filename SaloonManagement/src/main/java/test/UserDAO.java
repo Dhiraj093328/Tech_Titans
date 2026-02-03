@@ -8,7 +8,7 @@ public class UserDAO {
         boolean status = false;
 
         try {
-            Connection con = LocalDBConnection.getConnection();
+            Connection con = DBConnection.getConnection();
 
             String sql = "INSERT INTO users(name, email, contact_no, username, password) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(sql);
@@ -30,27 +30,32 @@ public class UserDAO {
     }
 
     // LOGIN USER
-    public boolean loginUser(String username, String password) {
-        boolean status = false;
+	public boolean loginUser(String username, String password) {
 
-        try {
-            Connection con = LocalDBConnection.getConnection();
+	    boolean status = false;
 
-            String sql = "SELECT * FROM users WHERE username=? AND password=?";
-            PreparedStatement ps = con.prepareStatement(sql);
+	    try {
+	        Connection con = DBConnection.getConnection();
 
-            ps.setString(1, username);
-            ps.setString(2, password);
+	        String sql = "SELECT * FROM users WHERE username=? AND password=?";
+	        PreparedStatement ps = con.prepareStatement(sql);
 
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) status = true;
+	        ps.setString(1, username);
+	        ps.setString(2, password);
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+	        ResultSet rs = ps.executeQuery();
 
-        return status;
-    }
+	        if (rs.next()) {
+	            status = true;
+	        }
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+
+	    return status;
+	}
+
 
 	
 }

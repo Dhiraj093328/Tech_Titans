@@ -42,14 +42,14 @@ public class UserLogin extends HttpServlet {
         String password = req.getParameter("password");
 
         UserDAO dao = new UserDAO();
-        boolean valid = dao.loginUser(username, password);
+        boolean isValid = dao.loginUser(username, password);
 
-        if (valid) {
-            HttpSession session = req.getSession();
-            session.setAttribute("username", username);
+        if (isValid) {
+            // SUCCESS → DASHBOARD
             resp.sendRedirect("dashboard.jsp");
         } else {
-            resp.sendRedirect("login.jsp");
+            // FAIL → BACK TO LOGIN WITH MESSAGE
+            resp.sendRedirect("userLogin.jsp?error=1");
         }
     }
 	}
