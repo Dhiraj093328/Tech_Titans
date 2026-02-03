@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Salon Therapist Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="hometherapist.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">SalonPro</div>
+            
+            <ul class="nav-menu">
+                <li>
+                    <a href="home.jsp" class="nav-link active">
+                        <span class="nav-icon">🏠</span>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="therapist.jsp" class="nav-link">
+                        <span class="nav-icon">💬</span>
+                        <span>Conversation with Client</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.jsp" class="nav-link">
+                        <span class="nav-icon">👤</span>
+                        <span>Profile</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="user-profile">
+                <div class="notification-btn">
+                    <span>🔔</span>
+                    <span class="notification-badge">3</span>
+                </div>
+                <div class="user-avatar">D</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="time-greeting">
+                <span>☀️</span>
+                <span>Good Morning, Dhiraj</span>
+            </div>
+            <h1>Welcome to Your <span class="highlight">Therapy Portal</span></h1>
+            <p>Manage your appointments, connect with clients, and deliver exceptional wellness experiences all in one place.</p>
+        </section>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <!-- Card 1: Active Sessions -->
+            <div class="stat-card">
+                <div class="stat-icon">🔄</div>
+                <div class="stat-label">Active Sessions</div>
+                <div class="stat-value">8</div>
+                <div class="stat-change">
+                    <span>↑ 25%</span>
+                    <span style="color: var(--text-tertiary)">vs last week</span>
+                </div>
+            </div>
+
+            <!-- Card 2: Total Clients -->
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div class="stat-label">Total Clients</div>
+                <div class="stat-value">248</div>
+                <div class="stat-change">
+                    <span>↑ 12%</span>
+                    <span style="color: var(--text-tertiary)">this month</span>
+                </div>
+            </div>
+
+            <!-- Card 3: Satisfaction Rate -->
+            <div class="stat-card">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-label">Satisfaction Rate</div>
+                <div class="stat-value">98%</div>
+                <div class="stat-change">
+                    <span>↑ 3%</span>
+                    <span style="color: var(--text-tertiary)">this week</span>
+                </div>
+            </div>
+
+            <!-- Card 4: Pending Requests -->
+            <div class="stat-card">
+                <div class="stat-icon">⏰</div>
+                <div class="stat-label">Pending Requests</div>
+                <div class="stat-value">15</div>
+                <div class="stat-change">
+                    <span>↑ 5</span>
+                    <span style="color: var(--text-tertiary)">new today</span>
+                </div>
+            </div>
+
+            <!-- Card 5: Completed Sessions -->
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div class="stat-label">Completed Sessions</div>
+                <div class="stat-value">156</div>
+                <div class="stat-change">
+                    <span>↑ 18%</span>
+                    <span style="color: var(--text-tertiary)">this month</span>
+                </div>
+            </div>
+
+            <!-- Card 6: Average Duration -->
+            <div class="stat-card">
+                <div class="stat-icon">⏱️</div>
+                <div class="stat-label">Avg Session Time</div>
+                <div class="stat-value">45m</div>
+                <div class="stat-change">
+                    <span>↓ 5m</span>
+                    <span style="color: var(--text-tertiary)">more efficient</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Salon Management System. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#contact">Contact Us</a>
+                <a href="#help">Help Center</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="hometherapist.js"></script>
+</body>
+</html>
