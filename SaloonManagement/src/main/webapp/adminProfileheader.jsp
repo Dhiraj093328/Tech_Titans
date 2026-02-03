@@ -51,7 +51,7 @@
 <div class="header">
 
     <div class="logo">
-        ✂️ User Profile
+        ✂️ Admin Profile
     </div>
 
     <div class="nav">

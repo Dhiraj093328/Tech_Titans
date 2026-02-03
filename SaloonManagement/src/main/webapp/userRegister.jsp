@@ -5,27 +5,51 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="userAuth.css">
+<link rel="stylesheet" href="css/userAuth.css">
 </head>
 <body>
 
-<div class="auth-container">
-    <h2>User Registration</h2>
+<div class="auth-wrapper">
+    <div class="auth-card">
+        <h2>User Registration</h2>
 
-    <form action="UserRegisterServlet" method="post">
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <input type="password" placeholder="Confirm Password" required>
+        <form action="UserRegisterServlet" method="post">
 
-        <button type="submit">Register</button>
-    </form>
+            <div class="input-group">
+                <input type="text" name="name" required>
+                <label>Full Name</label>
+            </div>
 
-    <p class="switch">
-        Already have an account?
-        <a href="userLogin.jsp">Login</a>
-    </p>
+            <div class="input-group">
+                <input type="email" name="email" required>
+                <label>Email</label>
+            </div>
+
+            <div class="input-group">
+                <input type="text" name="contact_no" required>
+                <label>Contact Number</label>
+            </div>
+
+            <div class="input-group">
+                <input type="text" name="username" required>
+                <label>Username</label>
+            </div>
+
+            <div class="input-group">
+                <input type="password" name="password" required>
+                <label>Password</label>
+            </div>
+
+            <button class="gradient-btn">Register</button>
+        </form>
+
+        <p class="switch">
+            Already have an account?
+            <a href="userLogin.jsp">Login</a>
+        </p>
+    </div>
 </div>
+
 
 </body>
 </html>
