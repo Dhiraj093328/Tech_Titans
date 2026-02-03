@@ -57,8 +57,10 @@ body {
 }
 </style>
 </head>
-<body class="bg-light d-flex align-items-center" style="min-height:100vh;">
+<body class="bg-light" style="background: linear-gradient(135deg, #74ebd5, #9face6);">
 <jsp:include page="success.jsp"/>
+<jsp:include page="header.jsp"/>
+<div class="mt-4 d-flex align-items-center" style="min-height:100vh;">
 <div class="container mt-4">
 	<div class="row justify-content-center">
 		<div class="col-12 col-sm-10 col-md-6 col-lg-4">
@@ -109,7 +111,7 @@ if (error != null) {
     						<span id="btnLoader" class="spinner-border spinner-border-sm ms-2 d-none" role="status" aria-hidden="true"></span>
 						</button>
 						<div  class="text-center mt-3 d-flex justify-content-between" style="max-width: 260px; margin: auto;">
-							<a href="forgat" class="text-decoration-none">
+							<a href="changePassword.jsp" class="text-decoration-none">
 							Forgat Password?</a>
   							<a href="adminRegister.jsp" class="text-decoration-none">
     							Create Account
@@ -120,6 +122,7 @@ if (error != null) {
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 <script>
 (() => {
@@ -183,6 +186,7 @@ window.addEventListener("pageshow", function () {
     }
 });
 </script>
+<jsp:include page="footer.jsp"/>
 </body>
 <script>
 function togglePassword() {
