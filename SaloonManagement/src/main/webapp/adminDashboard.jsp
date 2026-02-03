@@ -3,12 +3,12 @@
 
 <%
     // Session check
-    Integer userId = (Integer) session.getAttribute("userId");
-    String userName = (String) session.getAttribute("userName");
+    Integer adminId = (Integer) session.getAttribute("adminId");
+    String  adminName = (String) session.getAttribute("adminName");
 
-    //if (userId == null) 
+    //if (adminId == null) 
     //{
-     //   response.sendRedirect("login.jsp");
+     //   response.sendRedirect("adlogin.jsp");
      //   return;
     //}
 %>
@@ -21,19 +21,19 @@
 
 <!-- CSS -->
 <link rel="stylesheet" href="common.css">
-<link rel="stylesheet" href="adminProfile.css">
+<link rel="stylesheet" href="adminDashboard.css">
 
 </head>
 <body>
 <jsp:include page="success.jsp"/>
 <!-- Header -->
-<jsp:include page="adminProfileheader.jsp" />
+<jsp:include page="header.jsp" />
 
 <div class="dashboard">
 
     <!-- Welcome Box -->
     <div class="welcome-box">
-        <h2>Welcome, <%= userName %> 👋</h2>
+        <h2>Welcome, <%= adminName %> 👋</h2>
         <p>Manage your profile, appointments and notifications from here.</p>
     </div>
 
