@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>User Registration</title>
 <link rel="stylesheet" href="css/userAuth.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
     <div class="auth-card">
         <h2>User Registration</h2>
 
-        <form action="register" method="post">
+        <form action="RegisterServlet" method="post">
 
             <div class="input-group">
                 <input type="text" name="name" required>
@@ -40,7 +40,7 @@
                 <label>Password</label>
             </div>
 
-            <button class="gradient-btn">Register</button>
+            <button class="gradient-btn" type="submit">Register</button>
         </form>
 
         <p class="switch">
@@ -49,7 +49,6 @@
         </p>
     </div>
 </div>
-
 
 </body>
 </html>

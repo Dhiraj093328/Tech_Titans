@@ -3,10 +3,11 @@ package test;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class DBConnection {
+public class JDBCCon {
 
     public static Connection getConnection() {
         Connection con = null;
+
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -15,9 +16,11 @@ public class DBConnection {
                 "root",
                 "root"
             );
+
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();   // better than System.out.println
         }
+
         return con;
     }
 }

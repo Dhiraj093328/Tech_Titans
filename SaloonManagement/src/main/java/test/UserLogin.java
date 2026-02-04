@@ -53,5 +53,3 @@ public class UserLogin extends HttpServlet {
         }
     }
 	}
-
-
