@@ -25,7 +25,7 @@
 
 </head>
 <body>
-<jsp:include page="success.jsp"/>
+
 <!-- Header -->
 <jsp:include page="header.jsp" />
 
