@@ -56,7 +56,7 @@ body {
 
 </head>
 <body class="bg-light" style="background: linear-gradient(135deg, #74ebd5, #9face6);">
-<jsp:include page="header.jsp"/>
+<jsp:include page="adminProfileheader.jsp"/>
 <div class="mt-4 d-flex align-items-center">
 <div class="container mt-4">
 	<div class="row justify-content-center">
