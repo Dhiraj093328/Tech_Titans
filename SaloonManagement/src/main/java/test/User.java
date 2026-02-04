@@ -1,8 +1,7 @@
 package test;
 
-public class User 
-{
-	private String name;
+public class User {
+    private String name;
     private String email;
     private String contactNo;
     private String username;
