@@ -59,13 +59,18 @@ body {
 </head>
 <body class="bg-light" style="background: linear-gradient(135deg, #74ebd5, #9face6);">
 <jsp:include page="success.jsp"/>
-<jsp:include page="header.jsp"/>
+<jsp:include page="adminProfileheader.jsp"/>
 <div class="mt-4 d-flex align-items-center" style="min-height:100vh;">
 <div class="container mt-4">
 	<div class="row justify-content-center">
 		<div class="col-12 col-sm-10 col-md-6 col-lg-4">
 			<div class="card shadow-lg rounded-4">
 				<div class="card-body p-4">
+					<div class="text-center mb-3">
+    					<div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style="width:64px;height:64px;">
+        					<i class="bi bi-shop fs-3 text-success"></i>
+    					</div>
+					</div>
 					<h2 class="text-center fw-bold">Admin Login</h2>
 <%
 String error = (String) request.getAttribute("error");
