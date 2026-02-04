@@ -4,7 +4,6 @@
 String successMsg = (String) session.getAttribute("successMsg");
 if (successMsg == null) return;
 
-// remove immediately so it won't show again on refresh
 session.removeAttribute("successMsg");
 %>
 
