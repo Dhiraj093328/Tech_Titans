@@ -12,8 +12,20 @@
 <div class="auth-wrapper">
     <div class="auth-card">
         <h2>User Login</h2>
+        
+        <!-- ERROR MESSAGE -->
+    <%
+        String error = request.getParameter("error");
+        if (error != null) {
+    %>
+        <p style="color:red; text-align:center;">
+            Wrong username or password
+        </p>
+    <%
+        }
+    %>
 
-        <form action="UserLoginServlet" method="post">
+        <form action="UserLogin" method="post">
 
             <div class="input-group">
                 <input type="text" name="username" required>

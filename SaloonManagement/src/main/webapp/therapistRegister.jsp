@@ -22,13 +22,19 @@
 }
 </style>
 </head>
-<body class="d-flex align-items-center" style="min-height:100vh;
-background: linear-gradient(135deg, #74ebd5, #9face6);">
+<body style="background: linear-gradient(135deg, #74ebd5, #9face6);">
+<jsp:include page="header.jsp"/>
+<div class="mt-4 d-flex align-items-center" style="min-height:100vh;">
 <div class="container mt-4">
 	<div class="row justify-content-center">
 		<div class="col-md-6">
 			<div class="card shadow-lg rounded-4 border-0">
 				<div class="card-body p-4">
+					<div class="text-center mb-3">
+    					<div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style="width:64px;height:64px;">
+        					<i class="bi bi-scissors fs-3 text-success"></i>
+    					</div>
+					</div>
 					<h2 class="text-center fw-bold mb-1">Therapist Registration</h2>
 					<p class="text-center text-muted mb-4">
     					Create your professional account
@@ -111,6 +117,7 @@ background: linear-gradient(135deg, #74ebd5, #9face6);">
 		</div>
 	</div>
 </div>
+</div>
 <script>
 function togglePassword() {
     const pass = document.getElementById("password");
@@ -168,6 +175,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
   });
 })();
 </script>
+<jsp:include page="footer.jsp"/>
 </body>
 <script src="js/bootstrap.bundle.min.js"></script>
 </html>

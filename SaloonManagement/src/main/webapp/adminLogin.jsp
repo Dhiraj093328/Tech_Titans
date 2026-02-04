@@ -57,13 +57,20 @@ body {
 }
 </style>
 </head>
-<body class="bg-light d-flex align-items-center" style="min-height:100vh;">
+<body class="bg-light" style="background: linear-gradient(135deg, #74ebd5, #9face6);">
 <jsp:include page="success.jsp"/>
+<jsp:include page="adminProfileheader.jsp"/>
+<div class="mt-4 d-flex align-items-center" style="min-height:100vh;">
 <div class="container mt-4">
 	<div class="row justify-content-center">
 		<div class="col-12 col-sm-10 col-md-6 col-lg-4">
 			<div class="card shadow-lg rounded-4">
 				<div class="card-body p-4">
+					<div class="text-center mb-3">
+    					<div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style="width:64px;height:64px;">
+        					<i class="bi bi-shop fs-3 text-success"></i>
+    					</div>
+					</div>
 					<h2 class="text-center fw-bold">Admin Login</h2>
 <%
 String error = (String) request.getAttribute("error");
@@ -109,7 +116,7 @@ if (error != null) {
     						<span id="btnLoader" class="spinner-border spinner-border-sm ms-2 d-none" role="status" aria-hidden="true"></span>
 						</button>
 						<div  class="text-center mt-3 d-flex justify-content-between" style="max-width: 260px; margin: auto;">
-							<a href="forgat" class="text-decoration-none">
+							<a href="changePassword.jsp" class="text-decoration-none">
 							Forgat Password?</a>
   							<a href="adminRegister.jsp" class="text-decoration-none">
     							Create Account
@@ -120,6 +127,7 @@ if (error != null) {
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 <script>
 (() => {
@@ -183,6 +191,7 @@ window.addEventListener("pageshow", function () {
     }
 });
 </script>
+<jsp:include page="footer.jsp"/>
 </body>
 <script>
 function togglePassword() {
