@@ -1,63 +1,62 @@
 package test;
 
 import jakarta.servlet.ServletException;
+
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("register")
+/**
+ * Servlet implementation class RegisterServlet
+ */
+@WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
     public RegisterServlet() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        // Redirect to registration page if accessed via GET
-        response.sendRedirect(request.getContextPath() + "userRegister.jsp");
-    }
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		resp.sendRedirect("userRegister.jsp");
+	}
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		System.out.println("Name: " + req.getParameter("name"));
+		System.out.println("Email: " + req.getParameter("email"));
+		System.out.println("Contact: " + req.getParameter("contact_no"));
+		System.out.println("Username: " + req.getParameter("username"));
+		System.out.println("Password: " + req.getParameter("password"));
+		User user = new User();
+        user.setName(req.getParameter("name"));
+        user.setEmail(req.getParameter("email"));
+        user.setContactNo(req.getParameter("contact_no"));
 
-        // Retrieve parameters and trim whitespace
-        String name = request.getParameter("name").trim();
-        String email = request.getParameter("email").trim();
-        String contactNo = request.getParameter("contact_no").trim();
-        String username = request.getParameter("username").trim();
-        String password = request.getParameter("password").trim();
+        user.setUsername(req.getParameter("username"));
+        user.setPassword(req.getParameter("password"));
 
-        // Debugging (optional)
-        System.out.println("Registering User:");
-        System.out.println("Name: " + name);
-        System.out.println("Email: " + email);
-        System.out.println("Contact: " + contactNo);
-        System.out.println("Username: " + username);
-        System.out.println("Password: " + password);
-
-        // Create User object
-        User user = new User();
-        user.setName(name);
-        user.setEmail(email);
-        user.setContactNo(contactNo);
-        user.setUsername(username);
-        user.setPassword(password); // For production, hash the password here
-
-        // Save user using DAO
         UserDAO dao = new UserDAO();
         boolean success = dao.registerUser(user);
 
-        // Redirect based on result
         if (success) {
-            response.sendRedirect(request.getContextPath() + "userLogin.jsp");
+            resp.sendRedirect("userLogin.jsp");
         } else {
-            response.sendRedirect(request.getContextPath() + "userRegister.jsp");
+            resp.sendRedirect("userRegister.jsp");
         }
-    }
+	}
+
 }
